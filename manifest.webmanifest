@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Demonstration for web installation",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "Demonstration",
+  "short_name": "Demo",
+  "start_url": "index.html"
+}
