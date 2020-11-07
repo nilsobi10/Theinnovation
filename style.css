@@ -11,9 +11,7 @@ body   {
 	margin: 0;
 }
 
-.menu ul ul{
-	visibility: hidden;
-}
+
 
 .menu ul li a:hover{								/* NOTE: Wenn mit der Maus berührt wird */
 		background-color: red;
@@ -27,6 +25,11 @@ body   {
 	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
 	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
 	background-color: blue;						/* NOTE: Hintergrundfarbe */
+}
+
+.menu ul ul{
+	opacity: 0;
+	visibility: hidden;
 }
 
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
