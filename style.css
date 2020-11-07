@@ -13,11 +13,7 @@ body   {
 
 
 
-.menu ul li:hover + .hover{								/* NOTE: Wenn mit der Maus berührt wird */
-		opacity: 1;
-		visibility: visible;
 
-}
 
 .menu ul li a{
 	font-size: 20px;
@@ -31,8 +27,13 @@ body   {
 .menu ul ul{
 	transition: all 0,3s;
 	position: absolute;
-	opacity: 0;
-	visibility: hidden;
+	opacity: 0,4;
+}
+
+.menu ul li:hover + .hover{								/* NOTE: Wenn mit der Maus berührt wird */
+		opacity: 1;
+		visibility: visible;
+
 }
 
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
