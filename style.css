@@ -5,14 +5,10 @@ body   {
 }
 
 .menu ul{
+	position: sticky;									/* NOTE: Menu bleibt immer erhalten */
 	list-style: none;									/* NOTE: Stichpunkte entfernen */
 	padding: 0;												/* NOTE: Festlegen der Position am Rand */
 	margin: 0;
-}
-
-.menu ul:hover{
-	hight:100%;
-	visibility: visible;
 }
 
 .menu ul ul{
