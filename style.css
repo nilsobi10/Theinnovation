@@ -21,14 +21,6 @@ box um home fehlt
 
 */
 
-.menu ul li{
-	padding 15px;
-	position: relative;
-	width 200px;
-	background-color: blue;
-	
-
-
 
 }
 .menu ul li:hover > ul{
