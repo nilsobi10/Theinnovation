@@ -25,7 +25,7 @@ body   {
 	display: none;
 }
 
-.menu ul li a:hover /*.hover*/ {								/* NOTE: Wenn mit der Maus berührt wird */
+.menu ul li a:hover #firstname/*.hover*/ {								/* NOTE: Wenn mit der Maus berührt wird */
 		background-color: red;
 		opacity: 1;
 		display: block;
