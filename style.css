@@ -4,43 +4,6 @@ body   {
 	background-color: #348347;
 }
 
-.menu ul{
-	list-style: none;
-	margin: 0;								/*Punkte entfernen*/
-}
-.menu ul ul li{
-	transition: all 0.3s;
-	opacity: 0;
-	position: absolute;
-	visibility: hidden;
-
-
-}
-/* Erklärungen hinzufügen
-box um home fehlt
-
-*/
-
-
-.menu ul li{
-	position: relative;
-	background-color: blue;
-	width: 200px;
-	padding: 15px;
-}
-.menu ul li:hover > ul{
-	opacity: 1;
-	visibility: visible;
-
-
-}
-
-.menu ul li a{
-	color: red;
-	text-decoration: none;
-}
-
-
 
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	background-repeat: no-repeat;
