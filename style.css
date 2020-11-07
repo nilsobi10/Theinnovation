@@ -16,12 +16,15 @@ body   {
 	visibility: hidden;
 }
 
+.menu ul li a:hover{
+		background-color: red;
+}
+
 .menu ul li a{
 	color: white;											/* NOTE: Testfarbe auf weiß stellen */
 	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
 	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
 	background-color: blue;						/* NOTE: Hintergrundfarbe */
-
 }
 
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
