@@ -5,7 +5,7 @@ body   {
 }
 
 .menu ul{
-	position: sticky;									/* NOTE: Menu bleibt immer erhalten */
+
 	list-style: none;									/* NOTE: Stichpunkte entfernen */
 	padding: 0;												/* NOTE: Festlegen der Position am Rand */
 	margin: 0;
@@ -21,6 +21,7 @@ body   {
 }
 
 .menu ul li a{
+	padding: 15px;
 	color: white;											/* NOTE: Testfarbe auf weiß stellen */
 	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
 	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
