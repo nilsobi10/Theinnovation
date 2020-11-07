@@ -1,8 +1,12 @@
-body   {background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+body   {background-color: #348347;
 }
+h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
+	background-repeat: no-repeat;
+
+
+}
+
 p    {
-	background-color: black;
-	color: white;
+	background-color: #348347;
+	color: red;
 }
