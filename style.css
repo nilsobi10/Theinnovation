@@ -4,17 +4,18 @@ body   {
 	background-color: #348347;				/* NOTE: Hintergrunf auf gün */
 }
 
-
-
 .menu ul li{
 	width: 200px;											/* NOTE: Breite auf 200px stellen */
 	position: relative;
 	background-color: blue;						/* NOTE: Texthintergrung auf blau */
 }
+
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	background-repeat: no-repeat;
+}
 
-
+.menu ul{
+	color: white;
 }
 
 
