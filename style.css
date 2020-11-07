@@ -1,16 +1,17 @@
 body   {
-	padding: 0;
+	padding: 0;												/* NOTE: Ränder auf 0 */
 	margin: 0;
-	background-color: #348347;
+	background-color: #348347;				/* NOTE: Hintergrunf auf gün */
 }
 
 
 
 .menu ul li{
-	width: 200px;
-	margin: 0;																																/*Ränder auf 0 stellen*/
+	width: 200px;											/* NOTE: Breite auf 200px stellen */
+	margin: 0;												/* NOTE: Ränder auf  stellen */
 	padding: 0;
-	background-color: blue;
+	position: relative;			
+	background-color: blue;						/* NOTE: Texthintergrung auf blau */
 }
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	background-repeat: no-repeat;
