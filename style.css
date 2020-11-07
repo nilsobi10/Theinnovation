@@ -16,14 +16,19 @@ body   {
 
 
 }
+/* Erklärungen hinzufügen
+box um home fehlt
+
+*/
 
 .menu ul li{
-	padding: 15px;
+	padding 15px;
 	position: relative;
-	width: 200px;
-	background-color: lightblue;
-	border-right: 5px solid yellow;
-	border-top: 1px solid red;
+	width 200px;
+	background-color: blue;
+	
+
+
 
 }
 .menu ul li:hover > ul{
