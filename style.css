@@ -1,1 +1,8 @@
-<style>h1{ background-color: silver; }</style>
+body   {
+	background-color: DeepSkyBlue;
+	color: midnightblue;
+}
+p    {
+	background-color: #222;
+	color: #bbb;
+}
