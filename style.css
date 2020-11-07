@@ -16,6 +16,11 @@ body   {
 	background-color: lightblue;
 }
 
+.menu ul li a{
+	color: red;
+	text-decoration: none;
+}
+
 
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	background-repeat: no-repeat;
