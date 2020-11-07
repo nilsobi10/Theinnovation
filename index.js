@@ -36,7 +36,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
-
-
-
-var date = new Date("June 04, 2000");
