@@ -8,7 +8,7 @@ body   {
 
 .menu ul li{
 	width: 200px;											/* NOTE: Breite auf 200px stellen */
-	position: absolute;
+	position: relative;
 	padding: 0px;
 	margin: 0px;
 	background-color: blue;						/* NOTE: Texthintergrung auf blau */
