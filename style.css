@@ -26,11 +26,12 @@ body   {
 }
 
 .menu ul li a:hover #firstname/*.hover*/ {								/* NOTE: Wenn mit der Maus berührt wird */
+		transition: 0.3s;
 		background-color: red;
 		opacity: 1;
 		display: block;
 		visibility: visible;
-		transition: 0.3s;
+
 
 }
 
