@@ -1,5 +1,15 @@
-body   {background-color: #348347;
+body   {
+	padding: 0;
+	margin: 0;
+	background-color: #348347;
 }
+
+.menu ul{
+	list-style: none;
+	margin: 0;
+}
+
+
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	background-repeat: no-repeat;
 
