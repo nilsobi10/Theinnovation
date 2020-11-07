@@ -17,12 +17,12 @@ body   {
 
 .menu ul li a:hover{								/* NOTE: Wenn mit der Maus berührt wird */
 		background-color: red;
-		font-size: 10px;
 
 }
 
 .menu ul li a{
-	padding: 15px;
+	font-size: 20px;
+	hight: 50px;
 	color: white;											/* NOTE: Testfarbe auf weiß stellen */
 	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
 	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
