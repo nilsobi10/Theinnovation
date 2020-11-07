@@ -29,6 +29,7 @@ body   {
 		background-color: red;
 		opacity: 1;
 		display: block;
+		visibility: visible;
 
 }
 
