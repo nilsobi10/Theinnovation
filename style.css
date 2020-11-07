@@ -4,6 +4,10 @@ body   {
 	background-color: #348347;				/* NOTE: Hintergrunf auf gün */
 }
 
+.menu ul{
+	visibility: hidden;
+}
+
 .menu ul li{
 	width: 200px;											/* NOTE: Breite auf 200px stellen */
 	position: relative;
@@ -14,10 +18,9 @@ h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce
 	background-repeat: no-repeat;
 }
 
-.menu ul{
+.menu ul li a{
 	color: white;
 }
-
 
 
 
