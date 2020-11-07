@@ -12,7 +12,7 @@ body   {
 }
 
 .menu ul ul{
-	visibility: hidden;
+	visibility: visible;
 }
 
 .menu ul li a:hover{								/* NOTE: Wenn mit der Maus berührt wird */
