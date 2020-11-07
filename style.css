@@ -12,6 +12,7 @@ body   {
 
 .menu ul:hover{
 	hight:100%;
+	visibility: visible;
 }
 
 .menu ul ul{
