@@ -6,6 +6,8 @@ body   {
 
 .menu ul{
 	list-style: none;									/* NOTE: Stichpunkte entfernen */
+	padding: 0;												/* NOTE: Festlegen der Position am Rand */
+	margin: 0;
 }
 
 .menu ul li{
