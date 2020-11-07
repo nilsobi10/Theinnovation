@@ -4,45 +4,9 @@ body   {
 	background-color: #348347;				/* NOTE: Hintergrunf auf gün */
 }
 
-.menu ul{
-
-	list-style: none;									/* NOTE: Stichpunkte entfernen */
-	padding: 0;												/* NOTE: Festlegen der Position am Rand */
-	margin: 0;
-}
-
-.menu ul li a{
-	font-size: 20px;
-	padding: 15px;
-	color: white;											/* NOTE: Testfarbe auf weiß stellen */
-	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
-	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
-	background-color: blue;						/* NOTE: Hintergrundfarbe */
-}
-
-.menu ul ul{
-	position: absolute;
-	display: none;
-}
-
-.menu ul li a:hover #firstname/*.hover*/ {								/* NOTE: Wenn mit der Maus berührt wird */
-		transition: 0.3s;
-		background-color: red;
-		opacity: 1;
-		display: block;
-		visibility: visible;
-
-
-}
-
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	background-repeat: no-repeat;
 }
-
-
-
-
-
 
 p    {
 	background-color: red;
@@ -50,7 +14,6 @@ p    {
 	opacity: 0.6;
 	padding-top:5px;
 }
-
 
 .dropdown {
   position: relative;
