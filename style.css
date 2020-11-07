@@ -16,7 +16,7 @@ body   {
 	visibility: hidden;
 }
 
-.menu ul li a:hover{
+.menu ul ul li a:hover{								/* NOTE: Wenn mit der Maus berührt wird */
 		background-color: red;
 }
 
