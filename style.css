@@ -26,7 +26,7 @@ body   {
 	visibility: hidden;
 }
 
-.menu ul li:hover ul li a{								/* NOTE: Wenn mit der Maus berührt wird */
+.menu ul li:hover ul li{								/* NOTE: Wenn mit der Maus berührt wird */
 		background-color: red;
 		opacity: 1;
 		visibility: visible;
