@@ -1,9 +1,8 @@
-body   {
-
-	background-color: #59bd7a;
+body   {background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 p    {
 	background-color: black;
 	color: white;
 }
-style="background-image:url('https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg');"
