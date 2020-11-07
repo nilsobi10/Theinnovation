@@ -22,7 +22,7 @@ body   {
 
 .menu ul ul{
 	position: absolute;
-	display: none;
+	display: block;
 }
 
 .menu ul li a:hover ~ul{								/* NOTE: Wenn mit der Maus berührt wird */
