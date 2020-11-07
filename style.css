@@ -22,7 +22,7 @@ body   {
 
 .menu ul li a{
 	font-size: 20px;
-	hight: 50px;
+	padding: 50px;
 	color: white;											/* NOTE: Testfarbe auf weiß stellen */
 	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
 	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
