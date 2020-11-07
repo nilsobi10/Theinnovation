@@ -16,6 +16,12 @@ body   {
 	background-color: lightblue;
 	border-top: 1px solid red;
 }
+.menu ul li:hover > ul{
+	opacity: 1;
+	visibility: visible;
+
+
+}
 
 .menu ul li a{
 	color: red;
