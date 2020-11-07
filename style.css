@@ -14,6 +14,7 @@ body   {
 	position: relative;
 	width: 200px;
 	background-color: lightblue;
+	border-top: 1px solid red;
 }
 
 .menu ul li a{
