@@ -10,11 +10,7 @@ body   {
 	margin: 0;
 }
 
-.menu ul li{
-	width: 200px;											/* NOTE: Breite auf 200px stellen */
-	position: relative;
-	background-color: blue;						/* NOTE: Texthintergrung auf blau */
-}
+
 
 .menu ul ul{
 	visibility: hidden;
@@ -22,8 +18,8 @@ body   {
 
 .menu ul li a{
 	color: white;											/* NOTE: Testfarbe auf weiß stellen */
-	display: block;
-	width: 200px;
+	display: block;										/* NOTE: komplettes Feld kann angeklickt werden */
+	width: 200px;											/* NOTE: Breite des Feldes auf 200 stellen */
 
 }
 
