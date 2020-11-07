@@ -13,7 +13,7 @@ body   {
 
 
 
-.menu ul li:hover> ul{								/* NOTE: Wenn mit der Maus berührt wird */
+.menu ul li:hover + .hover{								/* NOTE: Wenn mit der Maus berührt wird */
 		opacity: 1;
 		visibility: visible;
 
