@@ -19,6 +19,7 @@ body   {
 }
 
 .dropdown {
+	background-color: blue;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -26,18 +27,22 @@ body   {
 	padding: 0px;
 	text-decoration: none;
 	margin: 0px;
+
 }
 
 .dropdown-content {
   display: none;
-
-  background-color: #f9f9f9;
+	background-color: blue;
   min-width: 160px;
   z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.dropdown:hover .{
+
 }
 
 .add-button{
@@ -51,7 +56,10 @@ body   {
 }
 
 .menu{
-	text-align: left;
+	text-decoration: none;
+	color: black;
+	font-size: 35px;
+	padding-left: 10px;
 }
 
 .nonlink{
