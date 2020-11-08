@@ -6,20 +6,15 @@ body   {
 
 .Überschrift{
 	background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
-	text-align:right;
+	text-align:center;
+	font-size: 35px;
 	background-repeat: no-repeat;
 }
 
 
-}
-
-.list-group-item{
-	background-color: blue;
-	color: red;
-}
+.list-group-item{}
 
 .dropdown {
-	background-color: blue;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -32,34 +27,38 @@ body   {
 
 .dropdown-content {
   display: none;
-	background-color: blue;
-  min-width: 160px;
+	margin-top: 40px;
+  min-width: 100px;
+	opacity: 0,9;
   z-index: 1;
+	background-color: #666145;
+
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.dropdown:hover .{
 
 }
 
-.add-button{
-	text-align: center;
-	width: 200px;
-}
+
 
 .home{
 	width: 80px;
 	height: 40px;
+	position: fixed;
 }
 
 .menu{
 	text-decoration: none;
+	width: 120px;
 	color: black;
 	font-size: 35px;
 	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.menu:hover{
+	background-color: yellow;
 }
 
 .nonlink{
