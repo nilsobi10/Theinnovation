@@ -5,6 +5,7 @@ body   {
 }
 
 h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
+	text-align: center;
 	background-repeat: no-repeat;
 }
 
