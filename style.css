@@ -8,11 +8,7 @@ h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce
 	background-repeat: no-repeat;
 }
 
-p    {
-	background-color: red;
-	color: blue;
-	opacity: 0.6;
-	padding-top:5px;
+
 }
 
 .list-group-item{
