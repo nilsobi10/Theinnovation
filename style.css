@@ -57,3 +57,8 @@ body   {
 .nonlink{
 	text-decoration: none;
 }
+
+.zs{
+	text-align: left;
+	color: red;
+}
