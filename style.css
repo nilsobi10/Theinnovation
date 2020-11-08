@@ -6,9 +6,8 @@ body   {
 
 .Überschrift{
 	background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
-	text-align: center;
+	text-align:right;
 	background-repeat: no-repeat;
-	background-color: yellow;
 }
 
 
@@ -52,5 +51,9 @@ body   {
 }
 
 .menu{
+	text-align: right;
+}
 
+.nonlink{
+	text-decoration: none;
 }
