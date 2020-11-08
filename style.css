@@ -38,3 +38,8 @@ h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.add-button{
+	text-align: center;
+	width: 200px;
+}
