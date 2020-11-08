@@ -4,10 +4,11 @@ body   {
 	background-color: #348347;				/* NOTE: Hintergrunf auf gün */
 }
 
-.Überschrift{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
+.Überschrift{
+	background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg");
 	text-align: center;
 	background-repeat: no-repeat;
-	position: fixed;
+	background-color: yellow;
 }
 
 
