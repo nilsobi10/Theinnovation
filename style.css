@@ -20,6 +20,7 @@ h1{background-image: url("https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce
 .dropdown {
 	font-size: 15px;
 	background-color: green;
+	width: 200px;
 	position: fixed;
 	top: 0;
 	left: 0;
