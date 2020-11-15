@@ -1,5 +1,8 @@
-var a=0;
-const canvas =document.getElementById("box");
-console.log("Hallo");
+function neuerEintrag(){
+var newDiv=document.createElement("div")
+var newContent=document.createTextNode("Hallo")
+newDiv.appendChild(newContent);
 
-while(a=0){console.log("Hi")};
+var currentDiv = document.getElementById("div1"); 
+  document.body.insertBefore(newDiv, currentDiv); 
+};
