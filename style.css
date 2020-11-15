@@ -1,7 +1,7 @@
 body   {
-	padding: 0;												/* NOTE: Ränder auf 0 */
+	padding: 0;													/* NOTE: Ränder auf 0 */
 	margin: 0;
-	background-color: #348347;				/* NOTE: Hintergrunf auf gün */
+	background-color: #348347;								/* NOTE: Hintergrunf auf gün */
 }
 
 .Überschrift{
@@ -12,7 +12,6 @@ body   {
 }
 
 
-.list-group-item{}
 
 .dropdown {
 	position: fixed;
@@ -26,18 +25,17 @@ body   {
 }
 
 .dropdown-content {
-  display: none;
+  	display: none;
 	margin-top: 40px;
-  	min-width: 100px;
 	opacity: 0,9;
   	z-index: 1;
 	background-color: #666145;
+	width: 200px;
 
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
-
+  	display: block;
 }
 
 
@@ -49,16 +47,15 @@ body   {
 }
 
 .menu{
-	text-decoration: none;
+	text-decoration:none;
 	color: black;
 	font-size: 35px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding:0 10 0 10;
 }
 
+
 .menu:hover{
-	background-color: yellow;
-	width: 200px;
+	font-weight: bold;
 }
 
 .nonlink{
