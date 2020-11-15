@@ -1,8 +1,12 @@
+//wird nicht dauerhaft gespeichert:
+
 function neuerEintrag(){
-var newDiv=document.createElement("div")
-var newContent=document.createTextNode("Hallo")
+var newDiv=document.createElement("ul")
+var newArt =prompt("Was möchtest du hinzufügen?");
+var newContent=document.createTextNode(newArt)
 newDiv.appendChild(newContent);
 
-var currentDiv = document.getElementById("div1"); 
+// füge das neu erstellte Element und seinen Inhalt ins DOM ein
+var currentDiv = document.getElementById("ul1");           
   document.body.insertBefore(newDiv, currentDiv); 
 };
