@@ -1,12 +1,19 @@
-//wird nicht dauerhaft gespeichert:
+window.onload = init;
 
-function neuerEintrag(){
-var newDiv=document.createElement("ul")
-var newArt =prompt("Was möchtest du hinzufügen?");
-var newContent=document.createTextNode(newArt)
-newDiv.appendChild(newContent);
+function init(){
+var knopf = document.getElementById("knopfSpeichern");
+knopf.onclick = knopfDruck;}
 
-// füge das neu erstellte Element und seinen Inhalt ins DOM ein
-var currentDiv = document.getElementById("ul1");           
-  document.body.insertBefore(newDiv, currentDiv); 
-};
+function knopfDruck(){
+  var textEingabefeld = document.getElementById("artikelTextInput");
+  var artikelEingabe = textEingabefeld.value;
+  if (artikelEingabe == ""){
+  alert("Franka gib doch bitte einen Artikel ein!");
+  }else{
+    var li = document.createElement("li");
+    li.innerHTML = artikelEingabe;
+    var ul = document.getElementById("einkauf");
+    ul.appendChild(li);
+  }
+  }
+
