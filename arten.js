@@ -12,8 +12,8 @@ function knopfDruck(){
   }else{
     var li = document.createElement("li");
     li.innerHTML = artikelEingabe;
+    localStorage.setItem(artikelEingabe,"1");           //localStorage Pflanzenliste
     var ul = document.getElementById("einkauf");
     ul.appendChild(li);
   }
   }
-
