@@ -1,3 +1,3 @@
-function summe(x,y){
-    return x+y;
-}
+//function summe(x,y){
+//    return x+y;
+//}
