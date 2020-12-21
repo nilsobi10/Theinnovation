@@ -1,0 +1,302 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px #000;
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00bb00;
+}
+
+.page {
+  margin-top: 2cm;
+  width: calc(100% - 1cm);
+  min-height: calc(100% - 2cm - 1cm);
+  display: none;
+  background-color: #eee;
+  padding: 0.5cm;
+  font-size: 0.5cm;
+}
+
+.page:target {
+  display: flex;
+}
+
+.menu {
+  z-index: 100;
+  position: fixed;
+  width: 10cm;
+  max-width: 70%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #eee;
+  transition: transform 0.3s ease-in-out;
+  color: #212121;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.menulogin {
+  height: 7cm;
+  width: 100%;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  transform: scaleX(-1);
+}
+
+.menulogin label {
+  width: calc(100% - 1cm);
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7cm;
+  padding-top: 1cm;
+  color: white;
+  margin-left: 0.5cm;
+}
+
+.menulogin button {
+  display: flex;
+  width: auto;
+  font-size: 1cm;
+  height: 1.7cm;
+  padding: 0.25cm 1cm 0.25cm 1cm;
+  background: #00bb00;
+  border: none;
+  border-radius: 0.85cm;
+  margin: 0 auto;
+  outline: none;
+  transition: background-color 0.15s linear;
+  color: white;
+}
+
+.menulogin button:hover {
+  background-color: #00dd00;
+}
+
+.menupoints {
+  height: calc(100% - 7cm);
+  color: #212121 !important;
+  transform: scaleX(-1);
+}
+
+.menupoints a {
+  width: calc(100% - 1.6cm);
+  display: flex;
+  align-items: center;
+  color: #212121 !important;
+  height: 1cm;
+  font-size: 0.75cm;
+  text-decoration: none;
+  padding: 0.7cm 0.8cm;
+  transition: background-color 0.1s linear;
+  background-color: #eee;
+}
+
+.menupoints a:hover {
+  background-color: #fff;
+}
+
+.menuoverlay {
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s linear;
+}
+
+.topbar {
+  z-index: 50;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: green;
+  height: 2cm;
+  width: calc(100% - 4cm);
+  font-size: 0.75cm;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  padding: 0 2cm;
+  box-shadow: 0px 3px 4px 4px green;
+}
+
+.topbar img {
+  position: absolute;
+  left: 0;
+  height: 1.2cm;
+  top: 0.4cm;
+  left: 0.4cm;
+}
+
+.login {
+  position: fixed;
+  z-index: 110;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.15s linear;
+}
+
+.loginfield {
+  position: fixed;
+  min-height: 40%;
+  min-width: 50%;
+  background-color: #eee;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.2cm solid green;
+  padding: 0.5cm;
+  max-width: calc(100% - 1cm - 0.4cm);
+  max-height: calc(100% - 1cm - 0.4cm);
+}
+
+.loading {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: opacity 0.15s linear;
+}
+
+.loadingbox {
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loadingbox div {
+  position: absolute;
+  height: 44%;
+  width: 44%;
+  border-radius: 25%;
+  background-color: #eee;
+  animation: loadingboxani 6s linear infinite;
+}
+
+.loadingbox div:nth-child(1) {
+  left: 4%;
+  top: 4%;
+  animation-delay: 0s;
+}
+
+.loadingbox div:nth-child(2) {
+  left: 52%;
+  top: 52%;
+  animation-delay: -2s;
+}
+
+.loadingbox div:nth-child(3) {
+  left: 4%;
+  top: 52%;
+  animation-delay: -4s;
+}
+
+@keyframes loadingboxani {
+  0% {
+    left: 4%;
+    top: 4%;
+  }
+
+  8.33% {
+    left: 52%;
+    top: 4%;
+  }
+
+  25% {
+    left: 52%;
+    top: 4%;
+  }
+
+  33.33% {
+    left: 52%;
+    top: 52%;
+  }
+
+  50% {
+    left: 52%;
+    top: 52%;
+  }
+
+  58.33% {
+    left: 4%;
+    top: 52%;
+  }
+
+  75% {
+    left: 4%;
+    top: 52%;
+  }
+
+  83.33% {
+    left: 4%;
+    top: 4%;
+  }
+
+  100% {
+    left: 4%;
+    top: 4%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menulogin {
+    height: 5cm;
+  }
+
+  .menulogin label {
+    padding-top: 0.5cm;
+    font-size: 0.5cm;
+  }
+
+  .menulogin button {
+    font-size: 0.6cm;
+    height: 1.3cm;
+  }
+
+  .menupoints {
+    height: calc(100% - 5cm);
+  }
+
+  .menupoints a {
+    font-size: 0.6cm;
+    padding: 0.5cm 0.6cm;
+    width: calc(100% - 1.2cm);
+  }
+}

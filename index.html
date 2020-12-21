@@ -1,43 +1,59 @@
-<html dir="ltr" lang="de">
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Herr Oberländer</title>
+  </head>
+  <body>
+    <div class="menu" style="transform:translateX(-100%) scaleX(-1);">
+      <div class="menulogin">
+        <label>Obländer Gewächshaus</label>
+        <button onclick="openlogin();closemenu();">Login</button>
+      </div>
+      <div class="menupoints" onclick="closemenu();">
+        <a href="#home">Startseite</a>
+        <a href="#plant">Pflanzen</a>
+        <a href="#status">Status</a>
+        <a href="#controll">Steuerung</a>
+        <a href="#impressum">Impressum</a>
+      </div>
 
-<head>
-  <meta charset="utf-8">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="font-awesome.css">
-
-  <title>TheInnovation</title>
-</head>
-
-<body>
-  <h1 class="Überschrift">Hier steht die Überschrift der Website</h1>
-
-
-  <ul>
-    <div class="dropdown">
-    <img class="Home" src="HausLogo.jpg"alt="Menü">
-
-    <div class="dropdown-content">
-      <a href="index.html" class="menu">Startseite</a>
-      <br>
-      <a href="arten.html" class="menu">Pflanzen</a>
-      <br>
-      <a href="arten2.html" class="menu">Pflanzen</a>
-      <br>
-      <a href="app.html" class="menu">App</a>
-      <br>
-      <a href="status.html" class="menu">Status</a>
     </div>
-  </div>
-</ul>
+    <div class="login" style="display:none;opacity:0;" onclick="closelogin();">
+      <div class="loginfield">
 
+      </div>
+    </div>
+    <div class="menuoverlay" style="display:none;opacity:0;" onclick="closemenu();">
 
-
-
-
-  <script src="index.js"></script>
-</body>
-<style id="global-dark-mode" media="screen">
-</style>
-
+    </div>
+    <div class="loading" style="display:none;opacity:0;"><div class="loadingbox"><div></div><div></div><div></div></div></div>
+    <div class="topbar">
+      <img src="menu.png" onclick="openmenu();" draggable="false">
+      Wilde Blume
+    </div>
+    <div class="page" id="home">
+      Home
+    </div>
+    <div class="page" id="plant">
+      Pflanze
+    </div>
+    <div class="page" id="status">
+      Status
+    </div>
+    <div class="page" id="controll">
+      Steuerung
+    </div>
+    <div class="page" id="impressum">
+      Impressum
+    </div>
+    <script src="index.js"></script>
+    <script src="pages/home.js"></script>
+    <script src="pages/plant.js"></script>
+    <script src="pages/status.js"></script>
+    <script src="pages/controll.js"></script>
+    <script src="pages/impressum.js"></script>
+  </body>
 </html>
