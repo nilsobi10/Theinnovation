@@ -16,6 +16,6 @@ function ini_status(){
         statuspage.innerHTML = JSON.stringify(d);
       })
       .catch(error => {
-        stopload(); 
+        stopload();
     })
 }
