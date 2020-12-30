@@ -44,6 +44,11 @@ body, html {
   display: flex;
 }
 
+#home{
+  background: url(background.png) no-repeat center center;
+  background-size: cover;
+}
+
 .menu {
   z-index: 100;
   position: fixed;
@@ -227,6 +232,7 @@ body, html {
   top: 52%;
   animation-delay: -4s;
 }
+
 
 @keyframes loadingboxani {
   0% {
