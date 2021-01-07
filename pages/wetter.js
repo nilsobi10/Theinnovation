@@ -2,11 +2,10 @@
 var wetterpage = document.querySelector("#wetter");
 function ini_wetter() {
   startload();
-  fetch("http://api.openweathermap.org/data/2.5/weather?q=Erfurt&appid=f110ed3e8279b2f034514ff87e0a387f", {
+  fetch("https://api.openweathermap.org/data/2.5/weather?q=Erfurt&appid=f110ed3e8279b2f034514ff87e0a387f", {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+
       },
       body: ""
     })
@@ -14,12 +13,7 @@ function ini_wetter() {
     .then(d => {
       stopload();
       var data = d.wind;
-      var out = `<tabele style="width:100%">
-      <tr>
-      <th>Hallo</th>
-      </tr>`;
-      out+=`<td>${wind.speed.toString()}</td>`;
-      out+="</table>";
+      var out=`<div>${d.wind.speed.toString()}</div>`;
       wetterpage.innerHTML = out;
     })
     .catch(error => {
@@ -27,3 +21,16 @@ function ini_wetter() {
       console.log(error);
     })
     }
+
+
+
+
+
+
+
+
+
+
+
+// 60deg = Nordost?
+// These: 90deg Ost...

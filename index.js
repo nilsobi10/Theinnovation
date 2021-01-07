@@ -12,6 +12,9 @@ function ini_sites(e){
     case "#controll":
       ini_controll();
       break;
+    case "#wetter":
+      ini_wetter();
+      break;
     case "#impressum":
       ini_impressum();
       break;
