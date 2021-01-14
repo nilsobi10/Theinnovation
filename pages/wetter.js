@@ -12,20 +12,36 @@ function ini_wetter() {
     .then(text => text.json())
     .then(d => {
       stopload();
-      var data = d.wind;
-      var out=`<div>${d.wind.speed.toString()}</div>`;
+      var data = d;
+      var speed = parseInt(d.wind.speed.toString());    //Windgeschwindigkeit
+
+      speed=speed*3.6;
+      //speed= 'Die aktuelle Windgeschwindigkeit beträt: '+speed;
+
+      var deg = parseInt(d.wind.deg.toString());          //Windrichtung
+      if (deg <=22.5){deg='Norden';}
+      else if(deg <= 67.5){deg='Nordost'}
+      else if(deg <= 112.5){deg='Osten'}
+      else if(deg <= 112.5+45){deg='Südosten'}
+      else if(deg <= 112.5+45*2){deg='Süden'}
+      else if(deg <= 112.5+45*3){deg='Südwesten'}
+      else if(deg <= 112.5+45*4){deg='Westen'}
+      else if(deg <= 112.5+45*5){deg='Nordwesten'}
+      else if(deg <= 112.5+45*6){deg='Norden'};
+      //deg='Die aktuelle Windrichtung beträgt: '+deg;
+
+      var pic='<img src="picture/bewölkt.png" onclick="openmenu();" draggable="false">'   //Wetterereignisserkennung
+
+      var out='<div class=wetter>'+deg+'<br>'+speed+pic+'</div>';
+
       wetterpage.innerHTML = out;
+
     })
     .catch(error => {
       stopload();
       console.log(error);
     })
     }
-
-
-
-
-
 
 
 
