@@ -30,7 +30,7 @@ function ini_wetter() {
       else if(deg <= 112.5+45*6){deg='Norden'};
       //deg='Die aktuelle Windrichtung beträgt: '+deg;
 
-      var pic='<img src="picture/bewölkt.png" onclick="openmenu();" draggable="false">'   //Wetterereignisserkennung
+      var pic='<img class="bild" src="picture/bewölkt.png" draggable="false">'   //Wetterereignisserkennung
 
       var out='<div class=wetter>'+deg+'<br>'+speed+pic+'</div>';
 

@@ -28,11 +28,11 @@ body, html {
 
 .box{
   background-color: rgba(33, 33, 33, 0.95);
-  max-width: 600px;
   height: 100%;
   padding: 10px 10px;
   margin: 0px;
   margin:auto;
+  width: 700px;
   text-align: center;
   border-radius: 10px;
   border-style: solid;
@@ -84,7 +84,6 @@ body, html {
   z-index: 100;
   position: fixed;
   width: 10cm;
-  max-width: 70%;
   top: 0;
   left: 0;
   height: 100%;
@@ -331,13 +330,17 @@ body, html {
     height: calc(100% - 5cm);
   }
 
-  /*.menu{
-    width: 50%;
-  }*/
-
   .menupoints a {
     font-size: 0.6cm;
     padding: 0.5cm 0.6cm;
     width: calc(100% - 1.2cm);
+  }
+
+  .bild{
+    width: 90%;
+  }
+
+  .box{
+    width:90%;
   }
 }
