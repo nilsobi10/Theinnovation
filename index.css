@@ -16,13 +16,19 @@ body, html {
 }
 
 #wetter::before{
-  conten:"";
-  background-color: rgba(0, 0, 0, 0.25);
+  content:"";
+  position: absolute;
+  top: 0px;
+  left:0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 0;
 }
 
 .box{
-  background-color: rgba(33, 33, 33, 0.9);
-  min-width: 120px;
+  background-color: rgba(33, 33, 33, 0.95);
+  max-width: 600px;
   height: 100%;
   padding: 10px 10px;
   margin: 0px;
@@ -32,6 +38,7 @@ body, html {
   border-style: solid;
   border: 0px;
   color:white;
+  z-index: 10;
 }
 
 ::-webkit-scrollbar {
@@ -322,6 +329,10 @@ body, html {
 
   .menupoints {
     height: calc(100% - 5cm);
+  }
+
+  .menu{
+    width: 50%;
   }
 
   .menupoints a {
