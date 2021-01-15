@@ -1,5 +1,5 @@
 
-var wetterpage = document.querySelector("#wetter");
+var wetterpage = document.querySelector("#klima");
 function ini_wetter() {
   startload();
   fetch("https://api.openweathermap.org/data/2.5/weather?q=Erfurt&appid=f110ed3e8279b2f034514ff87e0a387f", {
