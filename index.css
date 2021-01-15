@@ -331,9 +331,9 @@ body, html {
     height: calc(100% - 5cm);
   }
 
-  .menu{
+  /*.menu{
     width: 50%;
-  }
+  }*/
 
   .menupoints a {
     font-size: 0.6cm;
