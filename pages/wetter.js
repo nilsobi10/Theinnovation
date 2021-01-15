@@ -16,6 +16,7 @@ function ini_wetter() {
       var speed = parseInt(d.wind.speed.toString());    //Windgeschwindigkeit
 
       speed=speed*3.6;
+      speed=speed+" km/h"
       //speed= 'Die aktuelle Windgeschwindigkeit beträt: '+speed;
 
       var deg = parseInt(d.wind.deg.toString());          //Windrichtung
@@ -32,7 +33,7 @@ function ini_wetter() {
 
       var pic='<img class="bild" src="picture/bewölkt.png" draggable="false">'   //Wetterereignisserkennung
 
-      var out='<div class=wetter>'+deg+'<br>'+speed+pic+'</div>';
+      var out='<div class=wetter>'+pic+deg+speed+'</div>';
 
       wetterpage.innerHTML = out;
 

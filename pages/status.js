@@ -38,7 +38,7 @@ function ini_status(){
           out+=`<td>${data[i].gewaechshaus.temperaturInnen.toString()}</td>`;
           out+=`<td>${data[i].wetterstation.temperaturAussen.toString()}</td>`;
           out+=`<td>${data[i].gewaechshaus.luftfeuchtigkeitInnen.toString()}</td>`;
-          out+=`<td>${data[i].wetterstation.luftfeuchtigkeitAussen.toString()}</td>`;
+          //out+=`<td>${data[i].wetterstation.luftfeuchtigkeitAussen.toString()}</td>`;
           out+=`<td>${data[i].gewaechshaus.bodenfeuchtigkeit.bodenfeuchtigkeit1.toString()}</td>`;
           out+=`<td>${data[i].gewaechshaus.bodenfeuchtigkeit.bodenfeuchtigkeit2.toString()}</td>`;
           out+=`<td>${data[i].gewaechshaus.bodenfeuchtigkeit.bodenfeuchtigkeit3.toString()}</td>`;
