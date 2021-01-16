@@ -13,34 +13,82 @@ function ini_wetter() {
     .then(d => {
       stopload();
       var data = d;
-      var speed = parseInt(d.wind.speed.toString());    //Windgeschwindigkeit
 
-      speed=speed*3.6;
-      speed='Windgeschwindigkeit: '+speed+" km/h";
-      //speed= 'Die aktuelle Windgeschwindigkeit beträt: '+speed;
+      //Bild:
+      var datenbank = ['<img class="bild" src="picture/leer.png" draggable="false">'];
+      //Uhrzeit
+      temp = parseInt(d.dt.toString());
+      var date = new Date(temp * 1000);
+      var hours = date.getHours();
+      var minutes = "0" + date.getMinutes();
+      var seconds = "0" + date.getSeconds();
+      var time = [hours,minutes.substr(-2)];
+      datenbank.push(hours + ':' + minutes.substr(-2)+' Uhr');
+      //Temperatur
+      datenbank.push('Temperatur: '+ Math.round((parseFloat(d.main.temp.toString()))-273.15)*10/10+' °C');
+      //gefühlte Temperatur:
+      datenbank.push('gefühlte Temperatur: '+ Math.round((parseFloat(d.main.feels_like.toString()))-273.15)*10/10+' °C');
+      //Luftfeuchtigkeit
+      datenbank.push('Luftfeuchtigkeit: '+parseInt(d.main.humidity.toString())+' %');
+      //Windgeschwindigkeit
+      datenbank.push('Windgeschwindigkeit: '+(parseInt(d.wind.speed.toString()))*3.6+' km/h');
+      //Windrichtung
+      temp = parseInt(d.wind.deg.toString());          //Windrichtung
+      if (temp <=22.5){temp='Norden';}
+      else if(temp <= 67.5){temp='Nordost'}
+      else if(temp <= 112.5){temp='Osten'}
+      else if(temp <= 112.5+45){temp='Südosten'}
+      else if(temp <= 112.5+45*2){temp='Süden'}
+      else if(temp <= 112.5+45*3){temp='Südwesten'}
+      else if(temp <= 112.5+45*4){temp='Westen'}
+      else if(temp <= 112.5+45*5){temp='Nordwesten'}
+      else if(temp <= 112.5+45*6){temp='Norden'};
+      datenbank.push('Windrichtung: '+temp);
+      //Luftdruck:
+      datenbank.push('Luftdruck: '+ parseInt(d.main.pressure.toString())+' hPa');
+      //Sonnenaufgang:
+      temp = parseInt(d.sys.sunrise.toString());
+      var date = new Date(temp * 1000);
+      var hours = date.getHours();
+      var minutes = "0" + date.getMinutes();
+      var seconds = "0" + date.getSeconds();
+      datenbank.push('Sonnenaufgang: '+hours + ':' + minutes.substr(-2)+' Uhr');
+      //Tag-Nacht Bilderkennung
+      if(time[0]>hours|(time[0]==hours && time[1]>minutes.substr(-2))){
+        time.push('day');
+      }
+      else{
+        time.push('night')};
 
-      var deg = parseInt(d.wind.deg.toString());          //Windrichtung
-      if (deg <=22.5){deg='Norden';}
-      else if(deg <= 67.5){deg='Nordost'}
-      else if(deg <= 112.5){deg='Osten'}
-      else if(deg <= 112.5+45){deg='Südosten'}
-      else if(deg <= 112.5+45*2){deg='Süden'}
-      else if(deg <= 112.5+45*3){deg='Südwesten'}
-      else if(deg <= 112.5+45*4){deg='Westen'}
-      else if(deg <= 112.5+45*5){deg='Nordwesten'}
-      else if(deg <= 112.5+45*6){deg='Norden'};
-      //deg='Die aktuelle Windrichtung beträgt: '+deg;
-      deg='Windrichtung: '+deg;
+      //Sonnenuntergang:
+      temp = parseInt(d.sys.sunset.toString());
+      var date = new Date(temp * 1000);
+      var hours = date.getHours();
+      var minutes = "0" + date.getMinutes();
+      var seconds = "0" + date.getSeconds();
+      datenbank.push('Sonnenuntergang: '+hours + ':' + minutes.substr(-2)+' Uhr');
+      //Tag-Nacht Bilderkennung
+      if(time[0]>hours|(time[0]==hours && time[1]>minutes.substr(-2))){
+        time[2]='night';
+      };
+      console.log(time[2]);
+      //Bilderkennung
 
-      var temp = parseFloat(d.main.temp.toString());
-      temp-=273.15;
-      temp=Math.round(temp*10)/10;
-      temp='Temperatur: '+temp+' °C';
+      if (d.weather[0].description.toString ="light snow"){
+        var temp = "picture/day/leichtbewölkt.png";
+      };
+      var temp = "picture/bewölkt.png";
 
-      var pic='<img class="bild" src="picture/bewölkt.png" draggable="false">'   //Wetterereignisserkennung
+      datenbank[0] = '<img class="bild" src="'+temp+'" draggable="false">';
 
-      var out='<div class=wetter>'+'Erfurt-Bindersleben'+'<br>'+pic+'<br>'+deg+'<br>'+speed+'<br>'+temp+'</div>';
+      var out='<div class=wetter>Erfurt-Bindersleben<br>';
 
+      for(i=0;i<datenbank.length;i++){
+        out+='<br>';
+        out+=datenbank[i];
+      };
+
+      out+='</div>';
       wetterpage.innerHTML = out;
 
     })
@@ -55,5 +103,5 @@ function ini_wetter() {
 
 
 
-// 60deg = Nordost?
-// These: 90deg Ost...
+// 60temp = Nordost?
+// These: 90temp Ost...
