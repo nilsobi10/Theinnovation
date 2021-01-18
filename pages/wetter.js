@@ -74,14 +74,24 @@ function ini_wetter() {
       console.log(time[2]);
       //Bilderkennung
 
-      if (d.weather[0].description.toString ="light snow"){
-        var temp = "picture/day/leichtbewölkt.png";
+    /*  if (d.weather[0].description.toString ="light snow"){
+        var temp = "picture/"+time[2]+"/4starkbewölkt.png";
       };
-      var temp = "picture/bewölkt.png";
+
+      if (d.weather[0].description.toString = "broken clouds"){
+
+          temp = "picture/"+time[2]+"/3bewölkt.png";
+      }
+      */
+
+      vat temp = parseFloat(d.clouds.all.toString());
+      consol.log(temp);
+
+
 
       datenbank[0] = '<img class="bild" src="'+temp+'" draggable="false">';
 
-      var out='<div class=wetter>Erfurt-Bindersleben<br>';
+      var out='<div class=wetter>Erfurt-Bindersleben<br>';        //Stadt änderbar???
 
       for(i=0;i<datenbank.length;i++){
         out+='<br>';
