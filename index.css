@@ -330,6 +330,9 @@ body, html {
     height: 1.3cm;
   }
 
+  .menu{
+    width: 50%;
+  }
   .menupoints {
     height: calc(100% - 5cm);
   }
