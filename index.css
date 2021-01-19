@@ -330,9 +330,6 @@ body, html {
     height: 1.3cm;
   }
 
-  .menu{
-    width: 50%;
-  }
   .menupoints {
     height: calc(100% - 5cm);
   }
@@ -341,6 +338,10 @@ body, html {
     font-size: 0.6cm;
     padding: 0.5cm 0.6cm;
     width: calc(100% - 1.2cm);
+  }
+
+  .menu{
+    width: 60%;
   }
 
   .bild{

@@ -74,7 +74,7 @@ function ini_wetter() {
       console.log(time[2]);
 
       datenbank[0] = '<img class="bild" src="picture/'+(d.weather[0].icon.toString())+'.png" draggable="false">';
-
+      //genauere Anzeigen
       var out='<div class=wetter>Erfurt-Bindersleben<br>';        //Stadt änderbar???
 
       for(i=0;i<datenbank.length;i++){
