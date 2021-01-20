@@ -14,7 +14,10 @@ function ini_status(){
       .then(d => {
         stopload();
         var data = d.data;
-        var out = `<table style="width:100%">
+
+        var temp = data.length-1
+        var out = '<div class="ich">'+data[temp].time.toString()+'</div>';
+        /*var out = `<table style="width:100%">
           <tr>
             <th>Zeit</th>
             <th>Regensensor</th>
@@ -49,7 +52,8 @@ function ini_status(){
           out+=`<td>${data[i].wetterstation.niederschlag.toString()}</td>`;
           out+='</tr>';
         }
-        out+="</table>";
+        out+="</table>";*/
+
         statuspage.innerHTML = out;
       })
       .catch(error => {
