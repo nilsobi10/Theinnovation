@@ -267,7 +267,6 @@ body, html {
   animation-delay: -4s;
 }
 
-
 @keyframes loadingboxani {
   0% {
     left: 4%;
