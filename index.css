@@ -41,6 +41,38 @@ body, html {
   z-index: 10;
 }
 
+.Starttext{
+  position: absolute;
+  background-color: lightgreen;
+  width: 40%;
+  height: 40%;
+  margin: 10px 0px 0px -20px;
+  z-index: 5;
+  padding: 5% 05px 5% 10%;
+}
+
+.headline{
+  font-size: 50px;
+  color: white;
+}
+
+.pfeile{
+  position: relative;
+  background-color: green;
+  opacity: 0.7;
+  /*margin-left: -50%;*/
+}
+
+.Startseitebild{
+  position: fixed;
+  background-color: red;
+  width: 60%;
+  right: 0px;
+  bottom: 0px;
+  top: -20px;
+  z-index: 1;
+}
+
 .bild{
   width: 60%;
 }
@@ -80,8 +112,6 @@ body, html {
 }
 
 #home{
-  background: url(background.png) no-repeat center center;
-  background-size: cover;
 }
 
 .menu {
