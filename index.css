@@ -96,8 +96,8 @@ body, html {
   height: 300px;
 }
 
-.page:nth-child(2n){
-  margin-left: 22%;
+.page div:nth-child(2n){
+  align-self: end;
 }
 
 .headline{

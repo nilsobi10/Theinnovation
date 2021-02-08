@@ -21,6 +21,8 @@ function ini_sites(e){
   }
 }
 
+  window.scrollBy({ top: -1000, left: 0, behavior: "smooth" });
+
 window.onhashchange = () => {
   closemenu();
   ini_sites(location.hash);
