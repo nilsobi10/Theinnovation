@@ -23,7 +23,7 @@
 
     </div>
     <div class="login" style="display:none;opacity:0;" onclick="closelogin();">
-      <div class="loginfield">
+      <div class="loginfield"> Passwort
       </div>
     </div>
     <div class="menuoverlay" style="isplay:none;opacity:0;" onclick="closemenu();">
@@ -35,24 +35,35 @@
       Gewächshaus
     </div>
     <div class="page" id="home">
-      <div class="Starttext">
+
+      <div class="Starttext" id="box1">
         <div class="headline">STATUS
-
-        </div> <br> Hier kannst du die aktuellen Wetterdaten des Standorts des Gewächshauses entdecken. Die Wetterdaten werden mit Hilfe von Sateliten Bildern berechnet.
-
+        </div><br> Hier kannst du die aktuellen Daten des Gewächshauses finden. Die Daten werden alle 3 Minuten aktualisiert.
         <br>
         <br>
-        <br>
-
-        <a href="#wetter">Klick mich!</a>
-        <br>
-        <div class="pfeile">
-          <img src="menu.png" onclick="start()">
-          <img src="menu.png" onclick="start()">
-        </div>
-
+        <a href="#status">Klick mich!</a>
       </div>
-      <div class="Startseitebild"></div>
+      <div class="Starttext" id="box2">
+        <div class="headline">WETTER
+        </div><br> Hier kannst du die aktuellen Wetterdaten des Standorts des Gewächshauses entdecken. Die Wetterdaten werden mit Hilfe von Sateliten Bildern berechnet.
+        <br>
+        <br>
+        <a href="#wetter">Klick mich!</a>
+      </div>
+      <div class="Starttext" id="box1">
+        <div class="headline">Pflanzen
+        </div><br> Hier kannst du die aktuellen Pflanzenarten und Fortschritte der Pflanzen entdecken.
+        <br>
+        <br>
+        <a href="#plant">Klick mich!</a>
+      </div>
+      <div class="Starttext" id="box2">
+        <div class="headline">Steuerung
+        </div><br> Hier kannst du das gesamte Gewächshaus steuern, dazu musst du allerding eingeloggt sein.
+        <br>
+        <br>
+        <a href="#controll">Klick mich!</a>
+      </div>
 
     </div>
     <div class="page" id="plant">
