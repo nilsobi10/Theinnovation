@@ -96,11 +96,8 @@ body, html {
   height: 300px;
 }
 
-#box1{
+.page:nth-child(2n){
   margin-left: 22%;
-}
-
-#box2{
 }
 
 .headline{
