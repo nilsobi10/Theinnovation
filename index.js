@@ -21,7 +21,11 @@ function ini_sites(e){
   }
 }
 
-window.scrollBy({ top: -1000, left: 0, behavior: "smooth" });
+function scrollUp(){
+  window.scrollBy({ top: -1000, left: 0, behavior: "smooth" })
+};
+
+scrollUp();
 
 window.onhashchange = () => {
   closemenu();
