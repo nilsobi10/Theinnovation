@@ -30,13 +30,10 @@ body, html {
   background-color: rgba(33, 33, 33, 0.95);
   height: 100%;
   padding: 10px 10px;
-  margin: 0px;
   margin:auto;
   width: 50%;
   text-align: center;
-  border-radius: 10px;
-  border-style: solid;
-  border: 0px;
+  border-radius: 20px;
   color:white;
   z-index: 10;
 }
@@ -74,6 +71,7 @@ body, html {
   background-color: #eee;
   padding: 0.5cm;
   font-size: 0.5cm;
+
 }
 
 .page:target {
@@ -82,18 +80,22 @@ body, html {
 }
 
 #home{
+  background: url(background.png) no-repeat center center;
+  background-size: cover;
 }
 
 
 .Starttext{
   position: relative;
-  padding-right: 10px;
-  color: green;
+  color: white;
   background-color: lightgray;
-  padding: 1%;
-  margin-bottom: 1%;
+  padding: 3% 1% 1% 5%;
+  margin-bottom: 2%;
   width: 75%;
   height: 300px;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  opacity: 0.9;
+  border-radius: 20px;
 }
 
 .page div:nth-child(2n){
