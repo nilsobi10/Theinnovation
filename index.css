@@ -89,10 +89,10 @@ body, html {
   position: relative;
   color: white;
   background-color: lightgray;
-  padding: 3% 1% 1% 5%;
+  padding: 5%;
   margin-bottom: 2%;
   width: 75%;
-  height: 300px;
+  font-size: 160%;
   background-image: linear-gradient(45deg, #00bb00, green);
   opacity: 0.9;
   border-radius: 20px;
@@ -375,5 +375,9 @@ body, html {
 
   .box{
     width:90%;
+  }
+
+  .Starttext{
+    font-size: 100%;
   }
 }
