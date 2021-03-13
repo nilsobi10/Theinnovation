@@ -385,4 +385,8 @@ body, html {
   .Starttext {
     font-size: 100%;
   }
+
+  .topbar{
+    height: 1cm;
+  }
 }
