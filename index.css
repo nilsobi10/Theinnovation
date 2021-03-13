@@ -379,14 +379,15 @@ body, html {
   }
 
   .box {
-    width: 95%;
+    width: 90%;
   }
 
   .Starttext {
     font-size: 80%;
+    width: 80%;
   }
 
-  .headline{
+  .headline {
     font-size: 100%;
   }
 
