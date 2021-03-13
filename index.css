@@ -386,13 +386,12 @@ body, html {
     font-size: 100%;
   }
 
-  .topbar{
+  .topbar {
     height: 1.2cm;
   }
 
   .topbar img {
     height: 0.8cm;
     top: 0.2cm;
-
   }
 }
