@@ -95,7 +95,6 @@ body, html {
 .Starttext {
   position: relative;
   color: white;
-  background-color: lightgray;
   padding: 5%;
   margin-bottom: 2%;
   width: 75%;
@@ -388,7 +387,7 @@ body, html {
   }
 
   .headline {
-    font-size: 100%;
+    font-size: 120%;
   }
 
   .topbar {
