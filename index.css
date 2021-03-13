@@ -387,12 +387,12 @@ body, html {
   }
 
   .topbar{
-    height: 1cm;
+    height: 1.2cm;
   }
 
   .topbar img {
     height: 0.8cm;
-    top: 0.1cm;
+    top: 0.2cm;
 
   }
 }
