@@ -80,6 +80,8 @@ body, html {
   background-color: #eee;
   padding: 0.5cm;
   font-size: 0.5cm;
+  background: url(background.png) repeat center center;
+  background-size: cover;
 }
 
 .page:target {
@@ -87,10 +89,7 @@ body, html {
   flex-direction: column;
 }
 
-#home {
-  background: url(background.png) no-repeat center center;
-  background-size: cover;
-}
+#home {}
 
 .Starttext {
   position: relative;
@@ -345,6 +344,10 @@ body, html {
 }
 
 @media screen and (max-width: 600px) {
+
+  .page{
+    margin-top: 1.2cm;
+  }
   .menulogin {
     height: 5cm;
   }
