@@ -25,8 +25,7 @@ body, html {
 
 .box {
   background-image: linear-gradient(45deg, #00bb00, green);
-  height: 100%;
-  opacity: 0.9;
+  opacity: 0.95;
   padding: 20px 20px;
   margin: auto;
   text-align: center;
@@ -36,13 +35,22 @@ body, html {
   font-size: 20px;
 }
 
-
 .box-impressum {
-  opacity: 0.9;
+  opacity: 0.95;
   background-image: linear-gradient(45deg, #00bb00, green);
   height: 100%;
   padding: 10px 20px;
   margin: auto;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  z-index: 10;
+  font-size: 30px;
+}
+
+.box-status {
+  opacity: 0.95;
+  background-image: linear-gradient(45deg, #00bb00, green);
   text-align: center;
   border-radius: 20px;
   color: white;
@@ -89,10 +97,11 @@ body, html {
 
 .page:target {
   display: flex;
-  flex-direction: column;
 }
 
-#home {}
+#home:target {
+  flex-direction: column;
+}
 
 .Starttext {
   position: relative;
@@ -106,7 +115,11 @@ body, html {
   border-radius: 20px;
 }
 
-.page div:nth-child(2n) {
+#Starttext-top {
+  margin-top: 3%;
+}
+
+#home div:nth-child(2n) {
   align-self: end;
 }
 
@@ -226,7 +239,6 @@ body, html {
   top: 0.4cm;
   left: 0.4cm;
 }
-
 
 .login {
   position: fixed;
@@ -412,5 +424,9 @@ body, html {
   .box-impressum {
     font-size: 20px;
     padding: 2px 5px;
+  }
+
+  #status:target {
+    flex-direction: column;
   }
 }

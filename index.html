@@ -25,9 +25,11 @@
 
   </div>
   <div class="login" style="display:none;opacity:0;" onclick="closelogin();">
-    <div class="loginfield"> Passwort
-    </div>
+    <label class="loginfield"> Passwort
+    </label>
+    <label></label>
   </div>
+
   <div class="menuoverlay" style="display:none;opacity:0;" onclick="closemenu();">
 
   </div>
@@ -44,7 +46,7 @@
   </div>
   <div class="page" id="home">
 
-    <div class="Starttext" onclick="window.location.hash='#status'">
+    <div class="Starttext" id="Starttext-top" onclick="window.location.hash='#status'">
       <div class="headline">STATUS
       </div><br> Hier kannst du den aktuellen Status des Gewächshauses endecken. <br>Die Daten werden von Sensoren gesammelt, berechnt und alle 3 Minuten aktualisiert. <br>Dabei kannst du alle Veränderungen der letzten 7 Tage anschauen. <br>Des
       Weiteren findest du alle Pflanzen relevante Werte der gesamten aktuellen Saison. <br>
@@ -72,7 +74,15 @@
     Pflanze
   </div>
   <div class="page" id="status">
-    Status
+    <div class="box-status" id="daten">
+    </div>
+    <div class="box-status">
+      hier auch
+    </div>
+    <div class="box-status">
+      hier ebenfalls
+    </div>
+  </div>
   </div>
   <div class="page" id="controll">
     Steuerung

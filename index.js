@@ -22,13 +22,14 @@ function ini_sites(e){
 }
 
 function scrollUp(){
-  window.scrollBy({ top: -1000, left: 0, behavior: "smooth" })
+  window.scrollBy({ top: -window.innerHeight});
 };
 
 scrollUp();
 
 window.onhashchange = () => {
   closemenu();
+  scrollUp();
   ini_sites(location.hash);
 }
 if (location.hash == "") {

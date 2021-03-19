@@ -1,4 +1,4 @@
-var statuspage = document.querySelector("#status");
+var statuspage = document.querySelector("#daten");
 
 function ini_status(){
     startload();

@@ -71,7 +71,6 @@ function ini_wetter() {
       if(time[0]>hours|(time[0]==hours && time[1]>minutes.substr(-2))){
         time[2]='night';
       };
-      console.log(time[2]);
 
       datenbank[0] = '<img class="bild" src="picture/'+(d.weather[0].icon.toString())+'.png" draggable="false">';
       //genauere Anzeigen
