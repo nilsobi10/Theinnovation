@@ -20,6 +20,7 @@
       <a href="#status">Status</a>
       <a href="#controll">Steuerung</a>
       <a href="#wetter">Wetter</a>
+      <a href="#pool">Pool</a>
       <a href="#impressum">Impressum</a>
     </div>
 
@@ -64,6 +65,10 @@
       <div class="headline">Steuerung
       </div><br> Hier kannst du, falls du die Berechtigung hast, das gesamte Gewächshaus steuern.<br>
     </div>
+    <div class="Starttext" onclick="window.location.hash='#pool'">
+      <div class="headline">Pooltemperatur
+      </div><br> Hier findest du die Wassertemperatur vom Pool.
+    </div>
     <div class="Starttext" onclick="window.location.hash='#impressum'">
       <div class="headline">Impressum
       </div><br>Hier findest du das Impressum.<br>
@@ -71,7 +76,7 @@
 
   </div>
   <div class="page" id="plant">
-    <div class="box" id="Pflanzen" onclick="ini_plant()">
+    <div id="box-Pflanzen" id="Pflanzen" onclick="ini_plant()">
       Die Seite konnte nicht geladen werden.<br>
       <p id="sad">&#128577;</p>
       <br>Lade die Seite bitte neu oder klicke hier.
@@ -85,6 +90,13 @@
   </div>
   <div class="page" id="wetter">
     <div class="box" id="klima" onclick="ini_wetter()">
+      Die Seite konnte nicht geladen werden.<br>
+      <p id="sad">&#128577;</p>
+      <br> Lade die Seite bitte neu oder klicke hier.
+    </div>
+  </div>
+  <div class="page" id="pool">
+    <div class="box" id="pool" onclick="ini_pool()">
       Die Seite konnte nicht geladen werden.<br>
       <p id="sad">&#128577;</p>
       <br> Lade die Seite bitte neu oder klicke hier.
@@ -110,6 +122,7 @@
   <script src="pages/status.js"></script>
   <script src="pages/controll.js"></script>
   <script src="pages/wetter.js"></script>
+  <script src="pages/pool.js"></script>
   <script src="pages/impressum.js"></script>
 </body>
 

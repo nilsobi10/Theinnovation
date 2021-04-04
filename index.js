@@ -15,6 +15,9 @@ function ini_sites(e) {
     case "#wetter":
       ini_wetter();
       break;
+    case "#pool":
+      ini_pool();
+      break;
     case "#impressum":
       ini_impressum();
       break;
@@ -23,7 +26,7 @@ function ini_sites(e) {
 
 function scrollUp() {
   window.scrollBy({
-    top: -window.innerHeight
+    top: -100
   });
 };
 

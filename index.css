@@ -23,12 +23,38 @@ body, html {
   color: green;
 }
 
+#weitereInfos {
+  float: right;
+  padding-left: 20%;
+}
+
+#weitereInfos:hover {
+  color: blue;
+}
+
+#info{
+  float: left;
+}
+
 .box {
   background-image: linear-gradient(45deg, #00bb00, green);
   opacity: 0.95;
   padding: 20px 20px;
   margin: auto;
   text-align: center;
+  border-radius: 20px;
+  color: white;
+  z-index: 10;
+  font-size: 20px;
+}
+
+#box-Pflanzen {
+  background-image: linear-gradient(45deg, #00bb00, green);
+  opacity: 0.95;
+  padding: 20px 20px;
+  margin: auto;
+  height: 100%;
+  width: 70%;
   border-radius: 20px;
   color: white;
   z-index: 10;
