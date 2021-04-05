@@ -27,7 +27,7 @@ function ini_plant() {
     let info = document.createElement("div");
     info.id = "Info"+i;
     info.innerHTML = "test";
-    info.style.display = "block";
+    info.style.display = "none";
     pflanzen.innerHTML = plants[i];
     weitereInfos.onclick = () => {
       if (info.style.display === 'none') {
@@ -43,3 +43,4 @@ function ini_plant() {
     stopload();
   };
 }
+ini_plant();
