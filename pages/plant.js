@@ -43,4 +43,3 @@ function ini_plant() {
     stopload();
   };
 }
-ini_plant();

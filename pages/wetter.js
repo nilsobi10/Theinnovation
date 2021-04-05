@@ -101,8 +101,6 @@ function ini_wetter() {
     })
 }
 
-ini_wetter();
-
 
 
 

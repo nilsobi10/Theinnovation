@@ -4,5 +4,3 @@ var controllpage = document.querySelector("#controll");
       startload();
       stopload();
   };
-
-ini_controll();
