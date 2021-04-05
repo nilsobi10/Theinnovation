@@ -8,9 +8,9 @@ function ini_pool() {
 
 
   function drawChart() {
-    var inside = [
-      ['Zeit', 'Temperatur']
-    ];
+    var inside = [['Zeit', 'Temperatur']];
+    var time = [3];
+    var temper = [5];
     for (var i = 0; i < time.length; i++) {
       inside[inside.length] = [time[i], temper[i]];
     };
