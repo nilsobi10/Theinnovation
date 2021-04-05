@@ -33,7 +33,7 @@ function ini_pool() {
       ['Zeit', 'Temperatur']
     ];
     var temper = [5, 6, 7, 8, 4, 5, 6, 7];
-    for (var i = 0; i < time.length; i++) {
+    for (var i = 0; i < data.length; i++) {
       inside[inside.length] = [time[i], temper[i]];
     };
 
