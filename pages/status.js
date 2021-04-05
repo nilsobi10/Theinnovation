@@ -2,7 +2,7 @@ var statuspage = document.querySelector("#status");
 
 function ini_status(){
     startload();
-    fetch("https://theinnovation-proxy.vercel.app/theinnovation-db.gewaechshaus.vercel.app/api/getData.js", {
+    fetch("https://theinnovation-db.gewaechshaus.vercel.app/api/getData.js", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
