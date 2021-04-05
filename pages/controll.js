@@ -2,7 +2,7 @@ var controllpage = document.querySelector("#controll");
 
   function ini_controll(){
       startload();
-      fetch("https://theinnovation-db.gewaechshaus.vercel.app/api/addData.js", {
+      fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/addData.js", {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
