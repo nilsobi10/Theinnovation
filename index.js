@@ -41,6 +41,8 @@ if (location.hash == "") {
   location.hash = "#home"
 }
 
+ini_sites(location.hash);
+
 function openmenu() {
   document.querySelector(".menu").style.cssText = "transform:translateX(0) scaleX(-1);";
   document.querySelector(".menuoverlay").style.display = "";

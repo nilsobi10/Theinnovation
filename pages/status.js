@@ -44,6 +44,7 @@ function ini_status() {
         out += `<td>${data[i].gewaechshaus.bodenfeuchtigkeit.bodenfeuchtigkeit3.toString()}</td>`;
         out += `<td>${data[i].gewaechshaus.bewaesserung.wasserstand.toString()}</td>`;
         out += `<td>${data[i].gewaechshaus.bewaesserung.pumpe.pumpe.toString()}</td>`;
+
         out += '</tr>';
       }
       out += "</table>";
