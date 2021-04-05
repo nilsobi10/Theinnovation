@@ -59,6 +59,8 @@ function ini_pool() {
       var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
       chart.draw(data, options);
+
+      stopload();
     }
   }
 
