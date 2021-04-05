@@ -55,3 +55,5 @@ function ini_status(){
         console.log(error);
     })
 }
+
+ini_status();

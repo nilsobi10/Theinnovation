@@ -22,3 +22,5 @@ var controllpage = document.querySelector("#controll");
           console.log(error);
       })
   };
+
+ini_controll();

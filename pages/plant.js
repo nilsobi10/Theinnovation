@@ -1,4 +1,4 @@
-let plants = ['kartoffel', 'Gurken', 'Erdnüsse', 'Cocktailtomaten', 'Rispemtomaten'];
+let plants = ['Kartoffel', 'Gurken', 'Erdnüsse', 'Cocktailtomaten', 'Rispemtomaten'];
 
 
 function addplant(temp) {

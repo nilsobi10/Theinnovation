@@ -3,3 +3,5 @@ function ini_pool() {
   let page = document.getElementsByClassName('page');
   pool.style.background = "url(backgroundpool.png) repeat center center";
 }
+
+ini_pool();
