@@ -20,22 +20,25 @@ function ini_plant() {
   box.innerHTML = " "; //Box-Pflanzen wird geleert
   for (var i = 0; i < plants.length; i++) {
     let weitereInfos = document.createElement("div");
-    weitereInfos.onclick = () => openInfo(i);
     weitereInfos.id = "weitereInfos";
     weitereInfos.innerHTML = "weitere Infos";
 
     let pflanzen = document.createElement("div");
     let info = document.createElement("div");
-    info.id = "Info"+1;
+    info.id = "Info"+i;
     info.innerHTML = "test";
-    info.style.display = "none";
+    info.style.display = "block";
     pflanzen.innerHTML = plants[i];
+    weitereInfos.onclick = () => {
+      if (info.style.display === 'none') {
+        info.style.display = 'block';
+      } else {
+        info.style.display = 'none'
+      }
+    };
     pflanzen.appendChild(info);
     box.appendChild(weitereInfos)
     box.appendChild(pflanzen);
-    weitereInfos.onclick = () => {
-      info.style.display = "block";
-    }
 
     stopload();
   };
