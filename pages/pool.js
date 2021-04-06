@@ -27,7 +27,7 @@ function ini_pool() {
         window.temper = [];
         for (var i = 0; i < data.length; i++) {
           window.time.push(data[i].time);
-          window.temper.push(data[i].gewaechshaus.temperaturInnen);
+          window.temper.push(data[i].pool);
         }
         console.log(window.time);
         console.log(window.temper);
@@ -44,16 +44,23 @@ function ini_pool() {
       ];
       var temper = [5, 6, 7, 8, 4, 5, 6, 7];
       for (var i = 0; i < window.laengdata; i++) {
-        inside[inside.length] = [window.time[i],parseInt(window.temper[i])];
+        inside[inside.length] = [window.time[i], parseInt(window.temper[i])];
       };
       var data = google.visualization.arrayToDataTable(inside);
 
       var options = {
         title: 'Wassertemperatur',
-        curveType: 'function',
+        titlePosition: 'in', //Titel im Graph
+        curveType: 'none', //function = runde Funktion
         legend: {
-          position: 'bottom'
+          position: 'bottom', //Legenden Position
+          textStyle: {
+            color: 'blue', //stylt legende
+            fontSize: 16
+          }
+
         }
+
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
