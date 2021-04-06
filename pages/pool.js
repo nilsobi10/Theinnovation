@@ -44,7 +44,7 @@ function ini_pool() {
       ];
       var temper = [5, 6, 7, 8, 4, 5, 6, 7];
       for (var i = 0; i < window.laengdata; i++) {
-        inside[inside.length] = [window.time[i], parseInt(window.temper[i])];
+        inside[inside.length] = [window.time[i], parseFloat(window.temper[i])];
       };
       var data = google.visualization.arrayToDataTable(inside);
 
