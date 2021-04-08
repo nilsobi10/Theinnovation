@@ -198,7 +198,7 @@ function ini_status() {
 
       for (var j = 0; i > j; j++) {
 
-        var details = document.getElementsByClassName('datenfeld');
+        var details = document.getElementById('datenfeld'+j);
         var content = document.createElement('div');
         content.id = "details" + j;
         content.style.display = "none";

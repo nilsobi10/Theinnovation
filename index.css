@@ -91,6 +91,20 @@ body, html {
   font-size: 30px;
 }
 
+.graphen {
+  position: fixed;
+  min-height: 40%;
+  min-width: 50%;
+  background-color: #eee;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.2cm solid green;
+  padding: 0.5cm;
+  max-width: calc(100% - 1cm - 0.4cm);
+  max-height: calc(100% - 1cm - 0.4cm);
+}
+
 .datenfeld {
   float: left;
   min-width: 200px;
