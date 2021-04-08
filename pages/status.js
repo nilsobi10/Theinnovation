@@ -167,8 +167,18 @@ function ini_status() {
       benachrichtigung.className = "datenfeld";
       benachrichtigung.id = "datenfeld" + i;
       i++;
-      benachrichtigung.innerHTML = data[(data.length) - 1].benachrichtigung;
-
+      var fehler = "505:503:503";//data[(data.length) - 1].benachrichtigung.toString();
+      fehler = fehler.split(":");
+      switch (fehler.length) {
+        case 0:
+          benachrichtigung.innerHTML = "keine Benachrichtigungen)";
+          break;
+        case 1:
+          benachrichtigung.innerHTML = fehler.length + " Benachrichtigung";
+          break;
+        default:
+          benachrichtigung.innerHTML = fehler.length + " Benachrichtigungen";
+      }
 
       box.appendChild(temperaturInnenoben);
       box.appendChild(temperaturInnenunten);
@@ -202,7 +212,16 @@ function ini_status() {
           var content = document.createElement('div');
           content.id = "details" + j;
           content.style.display = "none";
-          content.innerHTML = " ha";
+          switch (j) {
+            case 24:
+              content.innerHTML = fehler;
+              break;
+            case 2:
+              // code block
+              break;
+            default:
+              content.innerHTML = "ha";
+          }
           details.onclick = () => {
             if (content.style.display === 'none') {
               content.style.display = 'block';
