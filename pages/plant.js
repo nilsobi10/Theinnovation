@@ -37,7 +37,7 @@ function ini_plant() {
       }
     };
     pflanzen.appendChild(info);
-    box.appendChild(weitereInfos)
+    box.appendChild(weitereInfos);
     box.appendChild(pflanzen);
 
     stopload();

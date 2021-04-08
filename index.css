@@ -10,12 +10,11 @@ body, html {
   position: absolute;
 }
 
-#curve_chart{
+#curve_chart {
   width: 100%;
   height: 1000px;
   margin: 0px;
 }
-
 
 #klima {
   line-height: 1.5;
@@ -81,14 +80,28 @@ body, html {
   font-size: 30px;
 }
 
-.box-status {
+#box-status {
   opacity: 0.95;
   background-image: linear-gradient(45deg, #00bb00, green);
   text-align: center;
+  padding: 10px 20px;
   border-radius: 20px;
   color: white;
   z-index: 10;
   font-size: 30px;
+}
+
+.datenfeld {
+  float: left;
+  min-width: 200px;
+  margin: 5px;
+  font-size: 40px;
+  background-color: green;
+  text-align: center;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 40px;
 }
 
 .bild {
@@ -256,7 +269,7 @@ body, html {
   background-color: green;
   height: 2cm;
   width: calc(100% - 4cm);
-  font-size: 0.75cm;
+  font-size: 250%;
   justify-content: center;
   align-items: center;
   display: flex;
