@@ -23,37 +23,37 @@ function ini_status() {
       temperaturInnenoben.className = "datenfeld";
       temperaturInnenoben.id = "datenfeld" + i;
       i++;
-      temperaturInnenoben.innerHTML = data[(data.length) - 1].gewaechshaus.temperaturInnenoben + " °C";
+      temperaturInnenoben.innerHTML = "Temperatur: <br>" + data[(data.length) - 1].gewaechshaus.temperaturInnenoben + " °C";
 
       var temperaturInnenunten = document.createElement('div');
       temperaturInnenunten.className = "datenfeld";
       temperaturInnenunten.id = "datenfeld" + i;
       i++;
-      temperaturInnenunten.innerHTML = data[(data.length) - 1].gewaechshaus.temperaturInnenunten + " °C";
+      temperaturInnenunten.innerHTML = "Temperatur: <br>" + data[(data.length) - 1].gewaechshaus.temperaturInnenunten + " °C";
 
       var temperaturInnenmitte = document.createElement('div');
       temperaturInnenmitte.className = "datenfeld";
       temperaturInnenmitte.id = "datenfeld" + i;
       i++;
-      temperaturInnenmitte.innerHTML = data[(data.length) - 1].gewaechshaus.temperaturInnenunten + " °C";
+      temperaturInnenmitte.innerHTML = "Temperatur: <br>" + data[(data.length) - 1].gewaechshaus.temperaturInnenunten + " °C";
 
       var luftfeuchtigkeitInnenoben = document.createElement('div');
       luftfeuchtigkeitInnenoben.className = "datenfeld";
       luftfeuchtigkeitInnenoben.id = "datenfeld" + i;
       i++;
-      luftfeuchtigkeitInnenoben.innerHTML = data[(data.length) - 1].gewaechshaus.luftfeuchtigkeitInnenoben + " %";
+      luftfeuchtigkeitInnenoben.innerHTML = "Luftfeuchtigkeit: <br>" + data[(data.length) - 1].gewaechshaus.luftfeuchtigkeitInnenoben + " %";
 
       var luftfeuchtigkeitInnenunten = document.createElement('div');
       luftfeuchtigkeitInnenunten.className = "datenfeld";
       luftfeuchtigkeitInnenunten.id = "datenfeld" + i;
       i++;
-      luftfeuchtigkeitInnenunten.innerHTML = data[(data.length) - 1].gewaechshaus.luftfeuchtigkeitInnenunten + " %";
+      luftfeuchtigkeitInnenunten.innerHTML = "Luftfeuchtigkeit: <br>" + data[(data.length) - 1].gewaechshaus.luftfeuchtigkeitInnenunten + " %";
 
       var luftfeuchtigkeitInnenmitte = document.createElement('div');
       luftfeuchtigkeitInnenmitte.className = "datenfeld";
       luftfeuchtigkeitInnenmitte.id = "datenfeld" + i;
       i++;
-      luftfeuchtigkeitInnenmitte.innerHTML = data[(data.length) - 1].gewaechshaus.luftfeuchtigkeitInnenunten + " %";
+      luftfeuchtigkeitInnenmitte.innerHTML = "Luftfeuchtigkeit: <br>" + data[(data.length) - 1].gewaechshaus.luftfeuchtigkeitInnenunten + " %";
 
       var bodenfeuchtigkeit1 = document.createElement('div');
       bodenfeuchtigkeit1.className = "datenfeld";
@@ -143,6 +143,7 @@ function ini_status() {
       pumpe.className = "datenfeld";
       pumpe.id = "datenfeld" + i;
       i++;
+      //var schalter = document.createElement('div');
       pumpe.innerHTML = data[(data.length) - 1].gewaechshaus.bewaesserung.pumpe.ventil4;
 
       var temperaturzentrum = document.createElement('div');
@@ -161,24 +162,25 @@ function ini_status() {
       zeit.className = "datenfeld";
       zeit.id = "datenfeld" + i;
       i++;
-      zeit.innerHTML = data[(data.length) - 1].time;
+      zeit.innerHTML = "letzte Aktualisation: <br>"+ data[(data.length) - 1].time;
 
       var benachrichtigung = document.createElement('div');
       benachrichtigung.className = "datenfeld";
       benachrichtigung.id = "datenfeld" + i;
       i++;
-      var fehler = "505:503:503";//data[(data.length) - 1].benachrichtigung.toString();
+      var fehler = data[(data.length) - 1].benachrichtigung.toString();
       fehler = fehler.split(":");
-      switch (fehler.length) {
-        case 0:
-          benachrichtigung.innerHTML = "keine Benachrichtigungen)";
-          break;
-        case 1:
-          benachrichtigung.innerHTML = fehler.length + " Benachrichtigung";
-          break;
-        default:
-          benachrichtigung.innerHTML = fehler.length + " Benachrichtigungen";
+      console.log(fehler);
+      if (fehler.length <= 1) {
+        if (fehler[0] !== "0") {
+          benachrichtigung.innerHTML = fehler.length + "&#9888; Meldung";
+        } else {
+          benachrichtigung.innerHTML = "keine Meldungen";
+        }
+      } else {
+        benachrichtigung.innerHTML = "&#9888" + fehler.length + " Meldungen";
       }
+
 
       box.appendChild(temperaturInnenoben);
       box.appendChild(temperaturInnenunten);
@@ -212,25 +214,68 @@ function ini_status() {
           var content = document.createElement('div');
           content.id = "details" + j;
           content.style.display = "none";
+
+          function offen() {
+            details.onclick = () => {
+              if (content.style.display === 'none') {
+                content.style.display = 'block';
+                details.style.backgroundColor = "#2EFE64";
+              } else {
+                content.style.display = 'none';
+                details.style.backgroundColor = "green";
+              }
+
+            };
+          };
+
           switch (j) {
-            case 24:
-              content.innerHTML = fehler;
+            case 16:
+              if (data[(data.length) - 1].gewaechshaus.bewaesserung.pumpe.ventil1 == false) {
+                details.style.backgroundColor = "red";
+              };
               break;
-            case 2:
-              // code block
+            case 17:
+              if (data[(data.length) - 1].gewaechshaus.bewaesserung.pumpe.ventil2 == false) {
+                details.style.backgroundColor = "red";
+              };
+              break;
+            case 18:
+              if (data[(data.length) - 1].gewaechshaus.bewaesserung.pumpe.ventil3 == false) {
+                details.style.backgroundColor = "red";
+              };
+              break;
+            case 19:
+              if (data[(data.length) - 1].gewaechshaus.bewaesserung.pumpe.ventil4 == false) {
+                details.style.backgroundColor = "red";
+              };
+              break;
+            case 20:
+              if (data[(data.length) - 1].gewaechshaus.bewaesserung.pumpe.pumpe == false) {
+                details.style.backgroundColor = "red";
+              };
+              break;
+            case 21:
+              break;
+            case 22:
+              break;
+            case 23:
+              break;
+            case 24:
+            offen();
+              if (fehler[0] == "0") {
+                content.innerHTML = " ";
+              } else {
+                content.innerHTML = fehler;
+              };
+
               break;
             default:
-              content.innerHTML = "ha";
+              content.innerHTML = "Diese Funktion ist momentan leider nicht verfügbar";
           }
-          details.onclick = () => {
-            if (content.style.display === 'none') {
-              content.style.display = 'block';
-            } else {
-              content.style.display = 'none'
-            }
-          };
           details.appendChild(content);
         });
+
+
 
       stopload();
 
