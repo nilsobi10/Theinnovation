@@ -196,23 +196,22 @@ function ini_status() {
       box.appendChild(zeit);
       box.appendChild(benachrichtigung);
 
-      for (var j = 0; i > j; j++) {
-
-        var details = document.getElementById('datenfeld'+j);
-        var content = document.createElement('div');
-        content.id = "details" + j;
-        content.style.display = "none";
-        content.innerHTML = " ha";
-        details.onclick = () => {
-          if (content.style.display === 'none') {
-            content.style.display = 'block';
-          } else {
-            content.style.display = 'none'
-          }
-        };
-        details.appendChild(content);
-
-      }
+      Object.values(document.getElementById("box-status").children)
+        .forEach((details, j) => {
+          // j geht von 0 - 23; elem ist das schon ausgewählte element
+          var content = document.createElement('div');
+          content.id = "details" + j;
+          content.style.display = "none";
+          content.innerHTML = " ha";
+          details.onclick = () => {
+            if (content.style.display === 'none') {
+              content.style.display = 'block';
+            } else {
+              content.style.display = 'none'
+            }
+          };
+          details.appendChild(content);
+        });
 
       stopload();
 
