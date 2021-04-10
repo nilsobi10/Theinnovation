@@ -33,3 +33,14 @@ function forcestoploading() {
   loading = 0;
   stopload();
 }
+
+function prozentfarbe(percent) {
+  if (percent < 20) {
+    var farbe = "red";
+  } else if (percent < 50) {
+    var farbe = "yellow";
+  } else {
+    var farbe = "green";
+  }
+  return farbe;
+};

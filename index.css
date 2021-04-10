@@ -82,6 +82,7 @@ body, html {
 
 #box-status {
   opacity: 0.95;
+  display: none;
   background-image: linear-gradient(45deg, #00bb00, green);
   text-align: center;
   padding: 10px 20px;
@@ -95,6 +96,54 @@ body, html {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+  width: 95%;
+}
+
+.inhalt {
+  position: absolute;
+  width: 95%;
+  height: 80%;
+}
+
+#temperatursite {
+  position: absolute;
+  top: 6%;
+  width: 50%;
+  left: 2.5%;
+}
+
+#schaltzentrale {
+  position: absolute;
+  border-radius: 20px;
+  width: 50%;
+  bottom: 0px;
+  right: 0px;
+}
+
+#gewaechshaus {
+  width: 100%;
+}
+
+#tempergraph {
+  width: 50%;
+  position: absolute;
+  right: 2.5%;
+}
+
+#zuruck {
+  position: absolute;
+  left: 10px;
+  font-size: 50px;
+}
+
+#weiter {
+  position: absolute;
+  right: 10px;
+  font-size: 50px;
+}
+
+.zustand {
+  height: 40px;
 }
 
 .graphen {
