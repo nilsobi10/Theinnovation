@@ -38,9 +38,10 @@ function ini_status() {
       var data = d.data;
       console.log(data[0].time);
 
+      var daten = document.createElement('div');
+
       function loadsite(site) {
         inhalt.innerHTML = "Temperaturen";
-        var daten = document.createElement('div');
         daten.id = "daten";
         var graph = document.createElement('div');
         graph.id = "graph";
@@ -120,7 +121,7 @@ function ini_status() {
       box.appendChild(weiter);
 
       stopload();
-      document.body.innerHTML = '<style>*{width:100%;height:100%;margin:0;}</style><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
     })
     .catch(error => {
       stopload();
