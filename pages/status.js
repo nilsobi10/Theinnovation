@@ -7,6 +7,8 @@ function ini_status() {
 
   var site = 0;
 
+
+
   function nextsite() {
     if (site == sites.length) {
       site = 0;
@@ -35,70 +37,89 @@ function ini_status() {
     })
     .then(text => text.json())
     .then(d => {
-      var data = d.data;
+        var data = d.data;
 
-      function loadsite(site) {
+        console.log(data[0].time);
+
+        function loadsite(site) {
+
+          inhalt.innerHTML = "Temperaturen";
+          var daten = document.createElement('div');
+          daten.id = "daten";
+          var graph = document.createElement('div');
+          graph.id = "graph";
+          graph.innerHTML = "graph";
+          inhalt.appendChild(daten);
+          inhalt.appendChild(graph);
+
+          function site_temper() {
+            var temperaturbild = document.createElement('img');
+            temperaturbild.className = "gewaechshausinnen";
+            temperaturbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
+            daten.appendChild(temperaturbild);
+          };
+
+          function site_luft() {
+            var luftbild = document.createElement('img');
+            luftbild.className = "gewaechshausinnen";
+            luftbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
+            daten.appendChild(luftbild);
+          };
+
+          function site_boden() {
+
+          };
+
+          function site_giess() {
+
+          };
+
+          function site_wasser() {
+
+          };
+
+          function site_mel() {
+
+          };
+
+        };
+
+
+
         console.log("aktuelle Seite: " + site);
         switch (site) {
           case 0:
-            inhalt.innerHTML = "Temperaturen";
-            var temperatursite = document.createElement('div');
-            temperatursite.id = "temperatursite";
-            var pictemp = document.createElement('img');
-            pictemp.id = "gewaechshaus";
-            pictemp.src = 'picture/gewaechshaus.jpg';
-            var schaltzentrale = document.createElement('img');
-            schaltzentrale.src = 'picture/schaltzentrale.jpg';
-            schaltzentrale.id = "schaltzentrale";
-
-            var tempergraph = document.createElement('div');
-            tempergraph.id = "tempergraph";
-            tempergraph.innerHTML = "hi";
-
-            temperatursite.appendChild(schaltzentrale);
-            temperatursite.appendChild(pictemp);
-            inhalt.appendChild(temperatursite);
-            inhalt.appendChild(tempergraph);
+            site_temper();
+            break;
+          case 1:
+            site_luft();
             break;
           default:
-            inhalt.innerHTML = "Es ist ein Fehler aufgetreten, versuchen Sie es später noch einmal erneut!"
+            inhalt.innerHTML = "Es ist ein Fehler aufgetreten, versuchen Sie es später noch einmal erneut!";
 
         }
       }
-
       var inhalt = document.createElement('div');
       inhalt.className = "inhalt";
       loadsite(site);
 
-      var box = document.getElementById('box-status');
-      box.style.display = "flex";
-      box.innerHTML = " ";
-      var weiter = document.createElement('div');
-      weiter.innerHTML = ">";
-      weiter.id = "weiter";
-      weiter.onclick = () => {
+      var box = document.getElementById('box-status'); box.style.display = "flex"; box.innerHTML = " ";
+      var weiter = document.createElement('div'); weiter.innerHTML = ">"; weiter.id = "weiter"; weiter.onclick = () => {
         nextsite();
         loadsite(site);
       }
-      var zuruck = document.createElement('div');
-      zuruck.innerHTML = "<";
-      zuruck.style.float = "left";
-      zuruck.id = "zuruck";
-      zuruck.onclick = () => {
+      var zuruck = document.createElement('div'); zuruck.innerHTML = "<"; zuruck.style.float = "left"; zuruck.id = "zuruck"; zuruck.onclick = () => {
         beforesite();
         loadsite(site);
       };
 
 
-      box.appendChild(zuruck);
-      box.appendChild(inhalt);
-      box.appendChild(weiter);
+      box.appendChild(zuruck); box.appendChild(inhalt); box.appendChild(weiter);
 
       stopload();
-
     })
-    .catch(error => {
-      stopload();
-      console.log(error);
-    })
+.catch(error => {
+  stopload();
+  console.log(error);
+})
 }
