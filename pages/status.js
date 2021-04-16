@@ -47,36 +47,36 @@ function ini_status() {
         graph.innerHTML = "graph";
         inhalt.appendChild(daten);
         inhalt.appendChild(graph);
+      };
 
-        function site_temper() {
-          var temperaturbild = document.createElement('img');
-          temperaturbild.className = "gewaechshausinnen";
-          temperaturbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
-          daten.appendChild(temperaturbild);
-        };
+      function site_temper() {
+        var temperaturbild = document.createElement('img');
+        temperaturbild.className = "gewaechshausinnen";
+        temperaturbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
+        daten.appendChild(temperaturbild);
+      };
 
-        function site_luft() {
-          var luftbild = document.createElement('img');
-          luftbild.className = "gewaechshausinnen";
-          luftbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
-          daten.appendChild(luftbild);
-        };
+      function site_luft() {
+        var luftbild = document.createElement('img');
+        luftbild.className = "gewaechshausinnen";
+        luftbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
+        daten.appendChild(luftbild);
+      };
 
-        function site_boden() {
+      function site_boden() {
 
-        };
+      };
 
-        function site_giess() {
+      function site_giess() {
 
-        };
+      };
 
-        function site_wasser() {
+      function site_wasser() {
 
-        };
+      };
 
-        function site_mel() {
+      function site_mel() {
 
-        };
       };
       console.log("aktuelle Seite: " + site);
       switch (site) {
@@ -119,7 +119,8 @@ function ini_status() {
       box.appendChild(inhalt);
       box.appendChild(weiter);
 
-      stopload();                                                                                                                                                                           document.body.innerHTML= '<style>*{width:100%;height:100%;margin:0;}</style><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+      stopload();
+      document.body.innerHTML = '<style>*{width:100%;height:100%;margin:0;}</style><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     })
     .catch(error => {
       stopload();
