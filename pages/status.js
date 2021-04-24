@@ -8,7 +8,7 @@ function ini_status() {
   var site = 0;
 
   function nextsite() {
-    if (site == sites.length) {
+    if (site == sites.length - 1) {
       site = 0;
     } else {
       site++;
@@ -17,7 +17,7 @@ function ini_status() {
 
   function beforesite() {
     if (site == 0) {
-      site = sites.length;
+      site = sites.length - 1;
     } else {
       site--;
     };
@@ -36,62 +36,73 @@ function ini_status() {
     .then(text => text.json())
     .then(d => {
       var data = d.data;
-      console.log(data[0].time);
+      console.log(data[0].uts);
 
-      var daten = document.createElement('div');
+      var graph = document.createElement('div');
+      var dashboard = document.createElement('div');
+      var chart = document.createElement('div');
+      chart.id = "chart";
 
       function loadsite(site) {
-        inhalt.innerHTML = "Temperaturen";
-        daten.id = "daten";
-        var graph = document.createElement('div');
+        inhalt.innerHTML = sites[site];
+        dashboard.id = "dashboard";
         graph.id = "graph";
         graph.innerHTML = "graph";
-        inhalt.appendChild(daten);
+        graph.style.display = "block";
+        dashboard.style.width = "50%";
+        dashboard.innerHTML = "dashboard";
+        var out = [];
+
+        console.log("aktuelle Seite: " + site);
+        switch (site) {
+          case 0:
+
+            for (var i = 0; i < 3; i++) {
+              out.push({
+                x: i,
+                y: {
+                  Temperatur: 1,
+                  Temperatur2: 2,
+                  Temperatur3: 3,
+                  Temperatur4: 4
+                }
+              });
+            }
+
+            break;
+          case 1:
+            break;
+          case 2:
+            break;
+          case 3:
+            break;
+          case 4:
+            break;
+          case 5:
+            graph.style.display = "none";
+            dashboard.style.width = "95%";
+            break;
+          default:
+            inhalt.innerHTML = "Es ist ein Fehler aufgetreten, versuchen Sie es später noch einmal erneut!";
+
+        }
+
+        var inlines = [{
+          "x": 1000,
+          "nid": "day",
+          "text": "Temperaturen",
+          "pos": "top", //top,bottom
+          "width": 2
+        }];
+        chart.setData(out, inlines);
+        //chart.show(['t3', 't4']);
+        chart.showAll();
+
+
+        inhalt.appendChild(dashboard);
+        graph.appendChild(chart);
         inhalt.appendChild(graph);
       };
-
-      function site_temper() {
-        var temperaturbild = document.createElement('img');
-        temperaturbild.className = "gewaechshausinnen";
-        temperaturbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
-        daten.appendChild(temperaturbild);
-      };
-
-      function site_luft() {
-        var luftbild = document.createElement('img');
-        luftbild.className = "gewaechshausinnen";
-        luftbild.src = "https://cdn.pixabay.com/photo/2021/02/05/20/03/matchstick-5985710_1280.jpg";
-        daten.appendChild(luftbild);
-      };
-
-      function site_boden() {
-
-      };
-
-      function site_giess() {
-
-      };
-
-      function site_wasser() {
-
-      };
-
-      function site_mel() {
-
-      };
-      console.log("aktuelle Seite: " + site);
-      switch (site) {
-        case 0:
-          site_temper();
-          break;
-        case 1:
-          site_luft();
-          break;
-        default:
-          inhalt.innerHTML = "Es ist ein Fehler aufgetreten, versuchen Sie es später noch einmal erneut!";
-
-      }
-      //}
       var inhalt = document.createElement('div');
       inhalt.className = "inhalt";
       loadsite(site);
@@ -105,7 +116,7 @@ function ini_status() {
       weiter.onclick = () => {
         nextsite();
         loadsite(site);
-      }
+      };
       var zuruck = document.createElement('div');
       zuruck.innerHTML = "<";
       zuruck.style.float = "left";
