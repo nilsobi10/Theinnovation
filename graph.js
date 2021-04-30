@@ -1,4 +1,4 @@
-var c = document.getElementById("chart");
+var c = document.getElementById('chart');
 var r = new Random();
 var gesture = new Gesture(c);
 

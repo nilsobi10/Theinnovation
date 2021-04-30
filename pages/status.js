@@ -56,15 +56,15 @@ function ini_status() {
         console.log("aktuelle Seite: " + site);
         switch (site) {
           case 0:
-
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < data.length; i++) {
               out.push({
-                x: i,
+                x: data[i].uts,
                 y: {
-                  Temperatur: 1,
-                  Temperatur2: 2,
-                  Temperatur3: 3,
-                  Temperatur4: 4
+                  Außentemperatur: data[i].wetterstation.temperaturAussen,
+                  Innentemperatur1: data[i].gewaechshaus.temperaturInnenoben,
+                  Innentemperatur2: data[i].gewaechshaus.temperaturInnenunten,
+                  Innentemperatur3: data[i].gewaechshaus.temperaturInnenmitte,
+                  Schaltzentralentemperatur: data[i].gewaechshaus.temperaturzentrum
                 }
               });
             }
