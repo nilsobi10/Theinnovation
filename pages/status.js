@@ -3,28 +3,6 @@ var statuspage = document.querySelector("#status");
 function ini_status() {
   startload();
 
-  var sites = ["Temperatur", "Luftfeuchtigkeit", "Bodenfeuchtigkeit", "Gießungen", "Wasserstand", "Meldungen"];
-
-  var site = 0;
-
-  function nextsite() {
-    if (site == sites.length - 1) {
-      site = 0;
-    } else {
-      site++;
-    };
-  };
-
-  function beforesite() {
-    if (site == 0) {
-      site = sites.length - 1;
-    } else {
-      site--;
-    };
-  };
-
-
-
   fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/getData.js", {
       method: 'POST',
       headers: {
@@ -37,17 +15,10 @@ function ini_status() {
     .then(d => {
       var data = d.data;
       console.log(data[0].uts);
-
-      var graph = document.createElement('div');
-      var dashboard = document.createElement('div');
-      var chart = document.createElement('div');
-      chart.id = "chart";
+      document.getElementById('graph');
 
       function loadsite(site) {
         inhalt.innerHTML = sites[site];
-        dashboard.id = "dashboard";
-        graph.id = "graph";
-        graph.innerHTML = "graph";
         graph.style.display = "block";
         dashboard.style.width = "50%";
         dashboard.innerHTML = "dashboard";
@@ -79,8 +50,8 @@ function ini_status() {
           case 4:
             break;
           case 5:
-            graph.style.display = "none";
-            dashboard.style.width = "95%";
+            //graph.style.display = "none";
+            //dashboard.style.width = "95%";
             break;
           default:
             inhalt.innerHTML = "Es ist ein Fehler aufgetreten, versuchen Sie es später noch einmal erneut!";
@@ -99,37 +70,10 @@ function ini_status() {
         chart.showAll();
 
 
-        inhalt.appendChild(dashboard);
-        graph.appendChild(chart);
-        inhalt.appendChild(graph);
       };
-      var inhalt = document.createElement('div');
-      inhalt.className = "inhalt";
+      var inhalt = document.getElementsByClassName('inhalt');
       loadsite(site);
 
-      var box = document.getElementById('box-status');
-      box.style.display = "flex";
-      box.innerHTML = " ";
-      var weiter = document.createElement('div');
-      weiter.innerHTML = ">";
-      weiter.id = "weiter";
-      weiter.onclick = () => {
-        nextsite();
-        loadsite(site);
-      };
-      var zuruck = document.createElement('div');
-      zuruck.innerHTML = "<";
-      zuruck.style.float = "left";
-      zuruck.id = "zuruck";
-      zuruck.onclick = () => {
-        beforesite();
-        loadsite(site);
-      };
-
-
-      box.appendChild(zuruck);
-      box.appendChild(inhalt);
-      box.appendChild(weiter);
 
       stopload();
 

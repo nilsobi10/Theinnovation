@@ -114,8 +114,7 @@ body, html {
 }
 
 #chart{
-  width: 100px;
-  height: 100px;
+  height: 500px;
 }
 #schaltzentrale {
   position: absolute;
@@ -146,13 +145,16 @@ body, html {
 }
 
 #zuruck {
+  display: flex;
   position: absolute;
   left: 10px;
+  float: left;
   font-size: 50px;
   z-index: 100;
 }
 
 #weiter {
+  display: flex;
   position: absolute;
   right: 10px;
   font-size: 50px;

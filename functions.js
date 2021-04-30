@@ -44,3 +44,25 @@ function prozentfarbe(percent) {
   }
   return farbe;
 };
+
+var sites = ["Temperatur", "Luftfeuchtigkeit", "Bodenfeuchtigkeit", "Gießungen", "Wasserstand", "Meldungen"];
+
+var site = 0;
+
+function nextsite() {
+  if (site == sites.length - 1) {
+    site = 0;
+  } else {
+    site++;
+  };
+  loadsite();
+};
+
+function beforesite() {
+  if (site == 0) {
+    site = sites.length - 1;
+  } else {
+    site--;
+  };
+  loadsite();
+};
