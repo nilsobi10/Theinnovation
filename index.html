@@ -27,7 +27,19 @@
 
   </div>
   <div class="login" style="display:none;opacity:0;" onclick="closelogin();">
-    <label class="loginfield"> Passwort
+    <label class="loginfield">
+      <div id="error"></div>
+      <form id="form">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="text">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </label>
     <label></label>
   </div>
@@ -86,12 +98,12 @@
   <div class="page" id="status">
     <div id="box-status">
       <div id="zuruck" onclick="beforesite()">
-        <
-      </div>
-      <div id="weiter" onclick="nextsite()">
-        >
-      </div>
+        < </div>
+          <div id="weiter" onclick="nextsite()">
+            >
+          </div>
           <div class="inhalt">
+            <p id="sitename">Titel</p>
             <div id="graph">
               <div id="chart">
               </div>

@@ -1,4 +1,27 @@
 var statuspage = document.querySelector("#status");
+var inhalt = document.getElementsByClassName('inhalt');
+var sitename = document.getElementById('sitename');
+
+
+var sites = ["Temperatur", "Luftfeuchtigkeit", "Bodenfeuchtigkeit", "Gießungen", "Wasserstand", "Meldungen"];
+
+var site = 0;
+
+function nextsite() {
+  if (site == sites.length - 1) {
+    site = 0;
+  } else {
+    site++;
+  };
+};
+
+function beforesite() {
+  if (site == 0) {
+    site = sites.length - 1;
+  } else {
+    site--;
+  };
+};
 
 function ini_status() {
   startload();
@@ -18,7 +41,7 @@ function ini_status() {
       document.getElementById('graph');
 
       function loadsite(site) {
-        inhalt.innerHTML = sites[site];
+        sitename.innerHTML = sites[site];
         graph.style.display = "block";
         dashboard.style.width = "50%";
         dashboard.innerHTML = "dashboard";
@@ -29,13 +52,13 @@ function ini_status() {
           case 0:
             for (var i = 0; i < data.length; i++) {
               out.push({
-                x: data[i].uts,
+                x: parseFloat(data[i].uts),
                 y: {
-                  Außentemperatur: data[i].wetterstation.temperaturAussen,
-                  Innentemperatur1: data[i].gewaechshaus.temperaturInnenoben,
-                  Innentemperatur2: data[i].gewaechshaus.temperaturInnenunten,
-                  Innentemperatur3: data[i].gewaechshaus.temperaturInnenmitte,
-                  Schaltzentralentemperatur: data[i].gewaechshaus.temperaturzentrum
+                  Außentemperatur: parseFloat(data[i].wetterstation.temperaturAussen),
+                  Innentemperatur1: parseFloat(data[i].gewaechshaus.temperaturInnenoben),
+                  Innentemperatur2: parseFloat(data[i].gewaechshaus.temperaturInnenunten),
+                  Innentemperatur3: parseFloat(data[i].gewaechshaus.temperaturInnenmitte),
+                  Schaltzentralentemperatur: parseFloat(data[i].gewaechshaus.temperaturzentrum)
                 }
               });
             }
@@ -71,10 +94,7 @@ function ini_status() {
 
 
       };
-      var inhalt = document.getElementsByClassName('inhalt');
       loadsite(site);
-
-
       stopload();
 
     })
