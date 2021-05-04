@@ -7,21 +7,7 @@ var sites = ["Temperatur", "Luftfeuchtigkeit", "Bodenfeuchtigkeit", "Gießungen"
 
 var site = 0;
 
-function nextsite() {
-  if (site == sites.length - 1) {
-    site = 0;
-  } else {
-    site++;
-  };
-};
 
-function beforesite() {
-  if (site == 0) {
-    site = sites.length - 1;
-  } else {
-    site--;
-  };
-};
 
 function ini_status() {
   startload();
@@ -39,6 +25,24 @@ function ini_status() {
       var data = d.data;
       console.log(data[0].uts);
       document.getElementById('graph');
+
+      function nextsite() {
+        if (site == sites.length - 1) {
+          site = 0;
+        } else {
+          site++;
+        };
+        loadsite();
+      };
+
+      function beforesite() {
+        if (site == 0) {
+          site = sites.length - 1;
+        } else {
+          site--;
+        };
+        loadsite();
+      };
 
       function loadsite(site) {
         sitename.innerHTML = sites[site];
@@ -95,6 +99,7 @@ function ini_status() {
 
       };
       loadsite(site);
+
       stopload();
 
     })

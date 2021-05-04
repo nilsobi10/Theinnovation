@@ -10,14 +10,6 @@ body, html {
   position: absolute;
 }
 
-#curve_chart {}
-
-#Chart {
-  position: fixed;
-  right: 200vh;
-  bottom: 200vh;
-}
-
 #klima {
   line-height: 1.5;
 }
@@ -115,7 +107,7 @@ body, html {
 }
 
 #chart {
-  height: 500px;
+  height: 100%;
 }
 
 #schaltzentrale {
@@ -131,10 +123,11 @@ body, html {
 }
 
 #graph {
-  top: 6%;
+  top: 11%;
   width: 50%;
   position: absolute;
   right: 2.5%;
+  height: 89%;
 }
 
 #sitename {}
