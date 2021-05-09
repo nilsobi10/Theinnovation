@@ -28,8 +28,7 @@ function Chart(e, darki = false) {
   var c = document.createElement("canvas");
   c.style.cssText = "width:100%;height:100%;";
   var popup = document.createElement("div");
-  popup.style.cssText =   //popup Anzeige
-    `
+  popup.style.cssText = `
     position:absolute;
     opacity:0;
     transition: opacity 0.15s linear 0s, top 0.4s ease 0s, left 0.4s ease 0s;;
@@ -91,31 +90,31 @@ function Chart(e, darki = false) {
   function checkcanvas(daten, check) {
     for (var i = 0; i < daten.length; i = i + 8) {
       var returnnow = true;
-      for (var j = 0; j < check.length; j++) {
+      for (var j = 0;j<check.length;j++){
         var now = check[j];
-        var cr = 0;
-        var cg = 0;
-        var cb = 0;
-        if (now.startsWith("rgb")) {
+        var cr=0;
+        var cg=0;
+        var cb=0;
+        if(now.startsWith("rgb")){
           now = now.substr(4);
-          if (now.startsWith("(")) {
+          if(now.startsWith("(")){
             now = now.substr(1);
           }
           var nowlist = now.split(",");
           cr = parseInt(nowlist[0]);
           cg = parseInt(nowlist[1]);
           cb = parseInt(nowlist[2]);
-        } else if (now.startsWith("#")) {
+        }else if(now.startsWith("#")){
           now = now.substr(1);
-          cr = parseInt(now.substr(0, 2), 16);
-          cg = parseInt(now.substr(2, 2), 16);
-          cb = parseInt(now.substr(4, 2), 16);
+          cr = parseInt(now.substr(0,2),16);
+          cg = parseInt(now.substr(2,2),16);
+          cb = parseInt(now.substr(4,2),16);
         }
-        if (daten[i] == cr && daten[i + 1] == cr && daten[i + 2] == cr) {
+        if(daten[i]==cr&&daten[i+1]==cr&&daten[i+2]==cr){
           returnnow = false;
         }
       }
-      if (returnnow) {
+      if(returnnow){
         return true;
       }
     }
@@ -131,31 +130,40 @@ function Chart(e, darki = false) {
     var heightt = height - offsetunten;
     return Math.floor(heightt - ((v - min) * heightt / (max - min)));
   }
+  //code.split("").map((d)=>{return d.charCodeAt(0).toString().padStart(3,"0")}).join("")
+  /*if (!window.cordova){
+    if(window.location.hostname!="jusax.de"){
+      window.location = "https://google.de/";
+    }
+  }*/
+
 
   function loop() {
     window.requestAnimationFrame(loop);
     if (draw) {
       draw = false;
-      width = c.offsetWidth * PIXEL_RATIO();
-      height = c.offsetHeight * PIXEL_RATIO();
-      zoomsize = Math.pow(PIXEL_RATIO(), 0.5);
+      width = element.offsetWidth * PIXEL_RATIO();
+      height = element.offsetHeight * PIXEL_RATIO();
+      zoomsize=Math.pow(PIXEL_RATIO(),0.5);
       c.width = width;
       c.height = height;
       ctx.fillStyle = t.background;
       ctx.clearRect(0, 0, width, height);
       ctx.fillRect(0, 0, width, height);
-      if (data.length == 0) {
+      if(data.length==0){
         ctx.fillStyle = t.fontcolor;
-        ctx.font = (t.fontValue * zoomsize).toString() + t.font;
+        ctx.font = (t.fontValue*zoomsize).toString()+t.font;
         var metrcisnodata = ctx.measureText(t.nodatastring);
-        ctx.fillText(t.nodatastring, (width - metrcisnodata.width) / 2, (height - (metrcisnodata.actualBoundingBoxAscent + metrcisnodata.actualBoundingBoxDescent)) / 2);
+        ctx.fillText(t.nodatastring,(width-metrcisnodata.width)/2,(height-(metrcisnodata.actualBoundingBoxAscent + metrcisnodata.actualBoundingBoxDescent))/2);
         return;
       }
       min = Infinity;
       max = -Infinity;
       for (var i = 0; i < data.length; i++) {
         if (data[i].x >= fromX && data[i].x <= toX || (i > 0 && i + 1 < data.length && (data[i + 1].x >= fromX && data[i - 1].x <= toX))) {
-          Object.keys(data[i].y).forEach((item, ii) => {
+          let fordata = Object.keys(data[i].y)
+          for(var ii = 0; ii<fordata.length;ii++){
+            let item = fordata[ii];
             if (showv.indexOf(item) != -1) {
               if (data[i].y[item] < min) {
                 min = data[i].y[item];
@@ -164,16 +172,16 @@ function Chart(e, darki = false) {
                 max = data[i].y[item];
               }
             }
-          });
+          }
         }
       }
       if (min < max) {
         var d = max - min;
-        min -= d * 0.1 * zoomsize;
-        max += d * 0.1 * zoomsize;
+        min -= d * 0.1*zoomsize;
+        max += d * 0.1*zoomsize;
 
         ctx.fillStyle = t.fontcolor;
-        ctx.font = (t.fontValue * zoomsize).toString() + t.font;
+        ctx.font = (t.fontValue*zoomsize).toString()+t.font;
         var metrics = ctx.measureText("88:0");
         var actualHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
         offsetunten = Math.round(actualHeight * 2.5);
@@ -207,7 +215,7 @@ function Chart(e, darki = false) {
         })();
         ctx.strokeStyle = t.minorline;
         ctx.fillStyle = t.fontcolor;
-        ctx.font = (t.fontValue * zoomsize).toString() + t.font;
+        ctx.font = (t.fontValue*zoomsize).toString()+t.font;
         ctx.lineWidth = 2;
         for (var i = ppp; getY(i) > 0; i += ppp) {
           var mesure = ctx.measureText(Math.floor(i * 100) / 100).width + 10;
@@ -234,9 +242,11 @@ function Chart(e, darki = false) {
         var lastX = 0;
         var neww = {};
         for (var i = 0; i < data.length; i++) {
-          if (data[i].x >= fromX && data[i].x <= toX || (i > 0 && i + 1 < data.length && (data[i + 1].x >= fromX && data[i - 1].x <= toX))) {
+          if (data[i].x >= fromX && data[i].x <= toX || (i > 0 && i + 1 < data.length && (data[i + 1].x >= fromX && data[i - 1].x <= toX)) ) {
             neww = {};
-            Object.keys(data[i].y).forEach((item, ii) => {
+            let fordata = Object.keys(data[i].y);
+            for(var ii=0;ii<fordata.length;ii++){
+              let item = fordata[ii];
               if (showv.indexOf(item) != -1) {
                 neww[item] = data[i].y[item];
                 if (typeof last[item] != "undefined") {
@@ -247,7 +257,7 @@ function Chart(e, darki = false) {
                   ctx.stroke();
                 }
               }
-            });
+            }
             last = neww;
             lastX = data[i].x;
           }
@@ -273,7 +283,7 @@ function Chart(e, darki = false) {
       ctx.stroke();
 
       ctx.fillStyle = t.fontcolor;
-      ctx.font = (t.fontValue * zoomsize).toString() + t.font;
+      ctx.font = (t.fontValue*zoomsize).toString()+t.font;
 
       for (var i = ppp; getY(i) > 0; i += ppp) {
         if (getY(i) < height - offsetunten) {
@@ -289,8 +299,9 @@ function Chart(e, darki = false) {
       }
       ctx.strokeStyle = "#ff0000";
       ctx.fillStyle = t.fontcolor;
-      ctx.font = (t.fontValue * zoomsize).toString() + t.font;
-      lines.forEach((line, i) => {
+      ctx.font = (t.fontValue*zoomsize).toString()+t.font;
+      for(let i = 0; i<lines.length;i++){
+        let line = lines[i];
         if (line.x > fromX && line.x < toX) {
           ctx.lineWidth = line.width;
           if (typeof linecolors[line.nid] == "undefined") {
@@ -300,26 +311,26 @@ function Chart(e, darki = false) {
           }
           ctx.beginPath();
           ctx.moveTo(getX(line.x), 0);
-          ctx.lineTo(getX(line.x) /* - Math.round(line.width / 2)*/ , height - (offsetunten * (line.pos == "bottom" ? 1.75 : 1)));
+          ctx.lineTo(getX(line.x)/* - Math.round(line.width / 2)*/, height - (offsetunten * (line.pos == "bottom" ? 1.75 : 1)));
           ctx.stroke();
           var mwidth = ctx.measureText(line.text).width;
           if (line.pos == "bottom") {
-            if (!checkcanvas(ctx.getImageData(getX(line.x) - Math.round(mwidth / 2), height - (offsetunten * 1.5), mwidth, 1).data, [t.background, t.minorline])) {
+            if (!checkcanvas(ctx.getImageData(getX(line.x) - Math.round(mwidth / 2), height - (offsetunten * 1.5), mwidth, 1).data,[t.background,t.minorline])) {
               ctx.fillText(line.text, getX(line.x) - Math.round(mwidth / 2), height - (offsetunten * 1.2));
             }
           } else {
             if (getX(line.x) - mwidth > offsetlinks + 5) {
-              if (!checkcanvas(ctx.getImageData(getX(line.x) - 5 - Math.round(mwidth), offsetunten / 2.5, mwidth, 1).data, [t.background, t.minorline])) {
+              if (!checkcanvas(ctx.getImageData(getX(line.x) - 5 - Math.round(mwidth), offsetunten / 2.5, mwidth, 1).data, [t.background,t.minorline])) {
                 ctx.fillText(line.text, getX(line.x) - 5 - Math.round(mwidth), offsetunten / 2.1);
               }
             } else {
-              if (!checkcanvas(ctx.getImageData(getX(line.x) + 5, offsetunten / 2.5, mwidth, 1).data, [t.background, t.minorline])) {
+              if (!checkcanvas(ctx.getImageData(getX(line.x) + 5, offsetunten / 2.5, mwidth, 1).data, [t.background,t.minorline])) {
                 ctx.fillText(line.text, getX(line.x) + 5, offsetunten / 2.1);
               }
             }
           }
         }
-      });
+      }
       var mmwidth = ctx.measureText("00:00").width;
       var minline = 0;
       var startline = false;
@@ -347,7 +358,7 @@ function Chart(e, darki = false) {
         ctx.fillText(t.calcX(i), getX(i) - Math.round(mmwidth / 2), height - (offsetunten / 3.75));
       }
       ctx.fillStyle = t.background;
-      ctx.font = (t.fontValue * zoomsize).toString() + t.font;
+      ctx.font = (t.fontValue*zoomsize).toString()+t.font;
       var dateee = t.calcX(fromX, true);
       var dateeemeasure = ctx.measureText(dateee);
       var dateeeheight = (dateeemeasure.actualBoundingBoxAscent + dateeemeasure.actualBoundingBoxDescent) * 2;
@@ -364,7 +375,9 @@ function Chart(e, darki = false) {
         ctx.lineTo(getX(cursorline.x), height - offsetunten);
         ctx.stroke();
 
-        Object.keys(cursorline.y).forEach((item, i) => {
+        let fordata = Object.keys(cursorline.y);
+        for(let i=0;i<fordata.length;i++){
+          let item = fordata[i];
           if (showv.indexOf(item) != -1) {
             ctx.fillStyle = colors[item];
             ctx.beginPath();
@@ -372,7 +385,7 @@ function Chart(e, darki = false) {
             ctx.fill();
 
           }
-        });
+        }
       }
     }
   }
@@ -425,7 +438,9 @@ function Chart(e, darki = false) {
     minX = Infinity;
     maxX = -Infinity;
     var namekeys = [];
-    rawdata.forEach((item, i) => {
+    //rawdata.forEach((item, i) => {
+    for(var i = 0; i < rawdata.length;i++){
+      let item = rawdata[i];
       var yN = {};
       if (item.x < minX) {
         minX = item.x;
@@ -433,20 +448,26 @@ function Chart(e, darki = false) {
       if (item.x > maxX) {
         maxX = item.x;
       }
-      Object.keys(item.y).forEach((tt, ii) => {
+      //Object.keys(item.y).forEach((tt, ii) => {
+      let fordata = Object.keys(item.y);
+      for(var ii = 0; ii < fordata.length;ii++){
+        let tt = fordata[ii];
         yN[tt] = t.calcY(item.x, tt, item.y[tt]);
-      });
+        if (namekeys.indexOf(tt) == -1) {
+          namekeys.push(tt);
+        }
+      }//);
       data.push({
         "xN": t.calcX(item.x),
         "y": yN,
         "x": item.x
       });
-      Object.keys(item.y).forEach((iii, ii) => {
+      /*Object.keys(item.y).forEach((iii, ii) => {
         if (namekeys.indexOf(iii) == -1) {
           namekeys.push(iii);
         }
-      });
-    });
+      });*/
+    }//);
     lines.forEach((item, i) => {
       linecolors[item.nid] = t.linecolor(item.nid, item);
     });
@@ -472,7 +493,7 @@ function Chart(e, darki = false) {
     rand.seed(seed);
     var lastcolors = [];
     namekeys.forEach((item, i) => {
-      colors[item] = t.graphcolor(item, rand, lastcolors);
+      colors[item] = t.graphcolor(item, rand,lastcolors);
     });
   }
 
@@ -481,7 +502,7 @@ function Chart(e, darki = false) {
   }
 
   function showpopup(x, y) {
-    if (data.length == 0) {
+    if(data.length==0){
       return;
     }
     var pos = ((x * PIXEL_RATIO() - offsetlinks) / (width - offsetlinks)) * (toX - fromX) + fromX;
@@ -522,13 +543,12 @@ function Chart(e, darki = false) {
     popup.innerHTML += `<h5>${t.calcX(showobj.x,true)}</h5>`;
     Object.keys(showobj.y).forEach((item, i) => {
       if (showv.indexOf(item) != -1) {
-        popup.innerHTML += `${names[item]}: ${(Math.round((showobj.y[item])*100)/100)} ${t.unit(item)}<br>`;
+        popup.innerHTML += `<label style="color:${colors[item]||"#000"};">${names[item]} (${item}): ${(Math.round((showobj.y[item])*100)/100)} ${t.unit(item)}</label><br>`;
       }
     });
-
     function checkk() {
-      var ot = parseInt(popup.style.top) - element.offsetTop;
-      var ol = parseInt(popup.style.left) - element.offsetLeft;
+      var ot = parseInt(popup.style.top)-element.offsetTop;
+      var ol = parseInt(popup.style.left)-element.offsetLeft;
       var or = c.offsetWidth - popup.offsetWidth - ol;
       var ob = c.offsetHeight - popup.offsetHeight - ot;
       var gooon = false;
@@ -544,6 +564,7 @@ function Chart(e, darki = false) {
         window.setTimeout(checkk, 100);
       }
     }
+    window.setTimeout(checkk, 100);
     window.requestAnimationFrame(checkk);
   }
 
@@ -559,10 +580,10 @@ function Chart(e, darki = false) {
 
   function zoom(x, r) {
     var zmove = /*Math.round*/ ((toX - fromX) * (r) / ((width - offsetlinks) / PIXEL_RATIO()));
-    if (zmove < 0 && toX - fromX < 5) {
+    if (zmove < 0 && toX - fromX < 60 * 10) {
       return;
     }
-    var where = (x * PIXEL_RATIO() - offsetlinks) / (width - offsetlinks);
+    var where = (x*PIXEL_RATIO() - offsetlinks) / (width - offsetlinks);
     fromX -= zmove * where;
     toX += zmove * (1 - where);
     if (fromX < minX) {
@@ -589,10 +610,34 @@ function Chart(e, darki = false) {
     show();
   }
 
+  this.toCSV = function(sepperator,komma){
+    var out = sepperator+"Unix Timestamp"+sepperator;
+    var keys = Object.keys(names);
+    keys.forEach(item => {
+      out+=names[item]+sepperator;
+    });
+    out = out.substr(0,out.length-1);
+    out+=""+"\n";
+    data.forEach(function(item){
+      out+=item.xN+sepperator;
+      out+=item.x+sepperator;
+      keys.forEach(item2 => {
+        if(item.y[item2]){
+          out+=(item.y[item2]).toString().replace(".",komma);
+        }
+        out+=sepperator;
+      });
+      out = out.substr(0,out.length-1);
+      out+=""+"\n";
+    });
+    out = out.substr(0,out.length-1);
+    return out;
+  };
+
   this.colors = function() {
     return colors;
   };
-  this.clear = function() {
+  this.clear = function(){
     ctx.clearRect(0, 0, width, height);
     draw = false;
     rawdata = [];
@@ -615,14 +660,14 @@ function Chart(e, darki = false) {
     cursorline = null;
 
   };
-  this.getColors = function() {
-    return Object.assign([], colors);
+  this.getColors = function(){
+    return Object.assign([],colors);
   };
-  this.getAllKeys = function() {
+  this.getAllKeys = function(){
     return Object.keys(names);
   };
-  this.getVisibleKeys = function() {
-    return Object.assign([], showv);
+  this.getVisibleKeys = function(){
+    return Object.assign([],showv);
   };
   this.showpopup = showpopup;
   this.closepopup = closepopup;
@@ -634,7 +679,7 @@ function Chart(e, darki = false) {
   this.recalc = calc;
   this.showAll = showAll;
   this.background = "#ffffff";
-  this.mainline = "#212121"; //
+  this.mainline = "#212121";//
   this.minorline = "#BDBDBD";
   this.fontcolor = "#000000";
   this.fontValue = 20;
@@ -645,10 +690,10 @@ function Chart(e, darki = false) {
   this.popuptextcolor = "#000000";
   this.nodatastring = "Keine Daten verfügbar!"
   this.dark = false;
-  this.unit = function(id) {
+  this.unit = function(id){
     return "";
   };
-  this.lineNames = function(id) {
+  this.lineNames = function(id){
     return id;
   };
   this.calcX = function(x /*121231*/ , full = false) { //may overwrite; gets called
@@ -660,30 +705,27 @@ function Chart(e, darki = false) {
   this.linecolor = function(id) {
     return "#ff0000";
   };
-  this.graphcolor = function(id, rand, last) {
-    var r = 0,
-      g = 0,
-      b = 0,
-      tries = 0;
+  this.graphcolor = function(id, rand,last) {
+    var r=0,g=0,b=0,tries=0;
 
-    function closest(r, g, b) {
+    function closest(r,g,b){
       var min = Infinity;
-      for (var i = 0; i < last.length; i++) {
-        var nowdis = Math.pow(Math.pow(r - last[i][0], 4) + Math.pow(g - last[i][1], 4) + Math.pow(b - last[i][2], 4), 0.5);
-        if (nowdis < min) {
+      for(var i = 0; i < last.length;i++){
+        var nowdis = Math.pow(Math.pow(r-last[i][0],4)+Math.pow(g-last[i][1],4)+Math.pow(b-last[i][2],4),0.5);
+        if(nowdis<min){
           min = nowdis;
         }
       }
       return min;
     }
-    do {
+    do{
       r = rand.rand(t.dark ? 150 : 0, t.dark ? 255 : 100, true);
       g = rand.rand(t.dark ? 150 : 0, t.dark ? 255 : 100, true);
       b = rand.rand(t.dark ? 150 : 0, t.dark ? 255 : 100, true);
       tries++;
-    } while (closest(r, g, b) < 400 && tries < 20)
+    }while(closest(r,g,b)<400&&tries<20)
 
-    last.push([r, g, b]);
+    last.push([r,g,b]);
 
     var ro = r.toString(16);
     var go = g.toString(16);
@@ -698,5 +740,8 @@ function Chart(e, darki = false) {
       bo = "0" + bo;
     }
     return "#" + ro + go + bo;
+  }
+  this.test = function(){
+    console.log(c,data,draw);
   }
 }
