@@ -35,7 +35,6 @@ function ini_pool() {
         }];
         chart.setData(out, inlines);
         chart.showAll();
-
       stopload();
 
     })
