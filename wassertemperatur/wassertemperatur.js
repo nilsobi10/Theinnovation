@@ -1,7 +1,8 @@
-var temperatur = document.getElementById('Temperatur');
-var uhrzeit = document.getElementById('Uhrzeit');
-temperatur.innerHTML = localStorage.getItem('Temperatur')+ ' °C' + "<br> Temperatur lädt";
-uhrzeit.innerHTML = 'Stand: '+new Date(localStorage.getItem('Uhrzeit')*1000).toLocaleString();
+function loadpooltempertur (){
+  var temperatur = document.getElementById('Temperatur');
+  var uhrzeit = document.getElementById('Uhrzeit');
+  temperatur.innerHTML = localStorage.getItem('Temperatur')+ ' °C' + "<br> Temperatur lädt";
+  uhrzeit.innerHTML = 'Stand: '+new Date(localStorage.getItem('Uhrzeit')*1000).toLocaleString();
 
 fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/getData.js", {
     method: 'POST',
@@ -23,3 +24,7 @@ fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/getData.js", {
     console.log(error);
 
   })
+};
+
+
+loadpooltempertur();
