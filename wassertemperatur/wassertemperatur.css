@@ -1,39 +1,39 @@
-* {
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background: lightgreen url("poll.png") no-repeat fixed center;
-  background-size: 100% 100%;
+  background: url("pool.jpg") no-repeat center;
 }
 
 #Temperatur{
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: 2%;
   font-weight: bold;
-  background-image: linear-gradient(45deg, #00bb00, green);
 }
 
 #Uhrzeit{
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: 3%;
   font-size: 30px;
-  background-image: linear-gradient(45deg, #00bb00, green);
 }
 
 #datenfeld{
-  opacity: 0.8;
+  position: relative;
+  margin: 4em 20% 0px 20%;
+  bottom: 20px;
+  opacity: 0.9;
   font-size: 400%;
-  margin: 10% 20% 10% 20%;
+  top: 20px;
   padding: 7.5% 0% 7.5% 0%;
   text-align: center;
   background-image: linear-gradient(45deg, #00bb00, green);
   border-radius: 20px;
-	position: relative;
 }
 
 @media screen and (max-width: 920px) {
 #datenfeld{
   font-size: 400%;
   padding: 2%;
-  margin: 50% 2%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 #Uhrzeit{
   margin-top: 4%;
@@ -46,9 +46,9 @@
   font-size: 2rem;
 }
 
-* {
-  background: lightgreen url("pollk.png") no-repeat fixed center;
-  background-size: 100% 100%;
+body {
+  background: url("pool.jpg") no-repeat center;
+  background-size: 100%;
 }
 
 #Uhrzeit{
