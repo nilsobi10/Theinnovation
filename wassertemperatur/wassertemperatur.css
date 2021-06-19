@@ -1,31 +1,42 @@
-body {
+body, html {
   font-family: Arial, Helvetica, sans-serif;
-  background: url("pool.jpg") no-repeat center;
+  height: 100%;
+  margin: 0;
+}
+.picture{
+  background-image:url("pool.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #Temperatur{
+  position: static;
   opacity: 0.9;
   margin-top: 2%;
   font-weight: bold;
 }
 
 #Uhrzeit{
+  position: static;
   opacity: 0.9;
   margin-top: 3%;
   font-size: 30px;
 }
 
 #datenfeld{
-  position: relative;
-  margin: 4em 20% 0px 20%;
-  bottom: 20px;
+  display:inline-block;
   opacity: 0.9;
   font-size: 400%;
-  top: 20px;
-  padding: 7.5% 0% 7.5% 0%;
+  padding: 7.5% 2%;
   text-align: center;
   background-image: linear-gradient(45deg, #00bb00, green);
   border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 920px) {
@@ -44,11 +55,6 @@ body {
 @media screen and (max-width: 600px) {
 #datenfeld{
   font-size: 2rem;
-}
-
-body {
-  background: url("pool.jpg") no-repeat center;
-  background-size: 100%;
 }
 
 #Uhrzeit{
